@@ -1,3 +1,4 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "welcome": "For those who prefer no JS and no CSS! A blog built entirely with Svelte, even considering terminal browsers! (Responsiveness is enhanced if JS is enabled!)"
 }
