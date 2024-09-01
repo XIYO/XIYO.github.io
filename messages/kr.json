@@ -1,3 +1,5 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "welcome": "no js, no css 를 위한! 터미널 브라우저까지 고려한... svelte 로 직접 만든 블로그! 입니다. (JS 가 활성화 되어 있으면 반응성이 향상됩니다!)",
+
 }
