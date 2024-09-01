@@ -8,6 +8,8 @@ export async function load({ url }) {
 
 	const [category, post] = await Promise.all([categoryPromise, postPromise]);
 
+	const title = post ? post.data.title : category ? category.name : 'XIYO Hole';
+
 	const og = post ? {
 			title: post.data.title,
 			description: post.data.description,
@@ -19,7 +21,7 @@ export async function load({ url }) {
 		} : {};
 
 	return {
-		...(post && { title: post.data.title }),
+		title,
 		category,
 		post,
 		og
