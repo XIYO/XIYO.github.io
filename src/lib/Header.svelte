@@ -21,6 +21,9 @@
 		justify-content: space-between;
 
 		h1 {
+			/* reset */
+			margin-block: 0;
+
 			flex-grow: 1;
 
 			/* reset */
