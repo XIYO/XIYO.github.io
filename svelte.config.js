@@ -7,9 +7,9 @@ const origin = `https://${readFileSync(join(process.cwd(), 'CNAME'), 'utf-8').tr
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	compilerOptions: {
-		runes: true
-	},
+	// compilerOptions: {
+	// 	runes: true
+	// },
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms

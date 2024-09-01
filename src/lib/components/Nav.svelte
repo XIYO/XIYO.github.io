@@ -2,6 +2,9 @@
 	import { page } from '$app/stores';
 	import Border from '$lib/ui/Border.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
+	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+
+	import { i18n } from '$lib/i18n.js';
 </script>
 
 <Border viewTransitionName="nav" tag="nav" id="nav" popover="manual">
@@ -10,20 +13,32 @@
 		<NavButton popovertargetaction="hide" />
 	</div>
 
-	<ul id="nav-main" class="padding content negative">
-		<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-			<a href="/">home</a>
-		</li>
-		<li aria-current={$page.url.pathname.startsWith('/posts') ? 'page' : undefined}>
-			<a href="/posts">posts</a>
-		</li>
-		<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-			<a href="/about">about</a>
-		</li>
-		<li aria-current={$page.url.pathname === '/globe' ? 'page' : undefined}>
-			<a href="/globe">globe</a>
-		</li>
-	</ul>
+	<div id="nav-main" class="padding content negative">
+		<ul>
+			<li aria-current={i18n.route($page.url.pathname) === '/' ? 'page' : undefined}>
+				<a href="/">home</a>
+			</li>
+			<li aria-current={i18n.route($page.url.pathname).startsWith('/posts') ? 'page' : undefined}>
+				<a href="/posts">posts</a>
+			</li>
+			<li aria-current={i18n.route($page.url.pathname) === '/about' ? 'page' : undefined}>
+				<a href="/about">about</a>
+			</li>
+			<li aria-current={i18n.route($page.url.pathname) === '/globe' ? 'page' : undefined}>
+				<a href="/globe">globe</a>
+			</li>
+		</ul>
+
+		<ul id="lang">
+		{#each availableLanguageTags as lang}
+			<li>
+				<a href={i18n.route($page.url.pathname)} hreflang={lang}>
+					{lang}
+				</a>
+			</li>
+		{/each}
+		</ul>
+	</div>
 
 	<div id="nav-footer" class="padding">
 		<a href="https://github.com/XIYO" target="_blank" aria-label="이요의 깃허브">
@@ -80,16 +95,31 @@
 			border-bottom: var(--default-border-width) solid var(--color-default-black);
 		}
 
-		ul#nav-main {
-			flex-grow: 1;
-			list-style-type: none;
-			margin-block: unset;
+		#nav-main {
+				flex-grow: 1;
+				display: flex;
+				justify-content: space-between;
+				flex-direction: column;
+
+				ul {
+						/* reset */
+						padding-inline-start: unset;
+            list-style-type: none;
+        }
 
 			li {
 				margin-block: var(--default-margin);
 
 				&[aria-current='page'] {
 					color: var(--color-primary);
+				}
+			}
+
+			#lang {
+				text-align: end;
+
+				ul {
+					margin-block-end: unset;
 				}
 			}
 		}

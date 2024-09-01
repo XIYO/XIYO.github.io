@@ -1,6 +1,7 @@
 <script>
 	import Border from '$lib/ui/Border.svelte';
 	import BorderHeader from '$lib/ui/BorderHeader.svelte';
+	import { i18n } from '$lib/i18n.js';
 
 	const { category } = $props();
 </script>
@@ -12,7 +13,7 @@
 		<ul class="padding">
 			{#each category.childCategories as childCategory}
 				<li>
-					<a href={childCategory.absolutePath}
+					<a href={i18n.route(childCategory.absolutePath)}
 						>{childCategory.name} ({childCategory.allPosts.length})</a
 					>
 				</li>
@@ -28,7 +29,7 @@
 		{#each category.allPosts as post}
 			<li>
 				<article>
-					<a href={post.absolutePath}>{post.data.title}</a>
+					<a href={i18n.route(post.absolutePath)}>{post.data.title}</a>
 				</article>
 			</li>
 		{/each}

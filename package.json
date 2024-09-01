@@ -15,8 +15,9 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "1.11.2",
 		"@playwright/test": "^1.46.1",
-		"@shikijs/rehype": "^1.15.1",
+		"@shikijs/rehype": "^1.15.2",
 		"@sveltejs/adapter-static": "^3.0.4",
 		"@sveltejs/enhanced-img": "^0.3.4",
 		"@sveltejs/kit": "^2.5.25",
@@ -43,5 +44,8 @@
 		"vitest": "^1.6.0"
 	},
 	"type": "module",
-	"packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b"
+	"packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
+	"dependencies": {
+		"@inlang/paraglide-sveltekit": "0.11.0"
+	}
 }
