@@ -35,7 +35,7 @@
 			align-content: center;
 			text-transform: uppercase;
 
-			overflow-x: auto; /* 의도적으로 스크롤을 노출하여 스크롤 높이도 미리 계산 하도록 한다 */
+			overflow-x: auto;
 			text-wrap: nowrap;
 		}
 	}
