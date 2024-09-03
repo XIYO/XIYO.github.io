@@ -9,13 +9,7 @@ const dummyDatetime = [
 ];
 
 function getGitCommand(path) {
-	return [
-		'log',
-		'--follow',
-		'--pretty=format:%ad,%s,%an',
-		'--date=format:%Y-%m-%dT%H:%M%z',
-		path
-	];
+	return ['log', '--follow', '--pretty=format:%ad,%s,%an', '--date=format:%Y-%m-%dT%H:%M%z', path];
 }
 
 function gitLogParser(stdout) {

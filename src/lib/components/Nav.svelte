@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Border from '$lib/ui/Border.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
-	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+	import { availableLanguageTags } from '$lib/paraglide/runtime.js';
 
 	import { i18n } from '$lib/i18n.js';
 </script>
@@ -30,13 +30,13 @@
 		</ul>
 
 		<ul id="lang">
-		{#each availableLanguageTags as lang}
-			<li>
-				<a href={i18n.route($page.url.pathname)} hreflang={lang}>
-					{lang}
-				</a>
-			</li>
-		{/each}
+			{#each availableLanguageTags as lang}
+				<li>
+					<a href={i18n.route($page.url.pathname)} hreflang={lang}>
+						{lang}
+					</a>
+				</li>
+			{/each}
 		</ul>
 	</div>
 
@@ -96,16 +96,16 @@
 		}
 
 		#nav-main {
-				flex-grow: 1;
-				display: flex;
-				justify-content: space-between;
-				flex-direction: column;
+			flex-grow: 1;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
 
-				ul {
-						/* reset */
-						padding-inline-start: unset;
-            list-style-type: none;
-        }
+			ul {
+				/* reset */
+				padding-inline-start: unset;
+				list-style-type: none;
+			}
 
 			li {
 				margin-block: var(--default-margin);

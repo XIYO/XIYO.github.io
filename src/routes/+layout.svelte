@@ -1,6 +1,6 @@
 <script>
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit'
-	import { i18n } from '$lib/i18n'
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+	import { i18n } from '$lib/i18n';
 
 	import '$lib/stylesheet/app.css';
 	import '$lib/stylesheet/view-transition.css';
@@ -70,14 +70,14 @@
 </svelte:head>
 
 <ParaglideJS {i18n}>
-<div id="container-content">
-	<Header title={$page.data.title} />
-	<main>
-		{@render children()}
-	</main>
-	<Footer />
-</div>
-<Nav />
+	<div id="container-content">
+		<Header title={$page.data.title} />
+		<main>
+			{@render children()}
+		</main>
+		<Footer />
+	</div>
+	<Nav />
 </ParaglideJS>
 
 <style>

@@ -134,7 +134,7 @@ img {
 }
 
 figure {
-    display: inline-block;
+	display: inline-block;
 	margin: unset;
 	border-radius: var(--inner-border-radius);
 	background-color: var(--color-primary);

@@ -10,15 +10,17 @@ export async function load({ url }) {
 
 	const title = post ? post.data.title : category ? category.name : 'XIYO Hole';
 
-	const og = post ? {
-			title: post.data.title,
-			description: post.data.description,
-			type: post ? 'article' : 'website',
-			url: url.href,
-			author : Array.from(new Set(post.gitLog.map((entry) => entry.author))).join(', '),
-			publishedTime: post.gitLog.at(0).datetime,
-			modifiedTime: post.gitLog.at(-1).datetime,
-		} : {};
+	const og = post
+		? {
+				title: post.data.title,
+				description: post.data.description,
+				type: post ? 'article' : 'website',
+				url: url.href,
+				author: Array.from(new Set(post.gitLog.map((entry) => entry.author))).join(', '),
+				publishedTime: post.gitLog.at(0).datetime,
+				modifiedTime: post.gitLog.at(-1).datetime
+			}
+		: {};
 
 	return {
 		title,

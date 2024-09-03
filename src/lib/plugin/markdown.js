@@ -8,20 +8,22 @@ import rehypeStringify from 'rehype-stringify';
 import { visit } from 'unist-util-visit';
 
 export default async function markdownAsync({ markdown }) {
-	return unified()
-		// remark
-		.use(remarkParse, { allowDangerousHtml: true })
-		.use(remarkFigureCaption)
-		.use(ExtractTitleAndPathRemove)
+	return (
+		unified()
+			// remark
+			.use(remarkParse, { allowDangerousHtml: true })
+			.use(remarkFigureCaption)
+			.use(ExtractTitleAndPathRemove)
 
-		// rehype
-		.use(remarkRehype, { allowDangerousHtml: true })
-		.use(rehypeCallouts)
-		.use(rehypeShiki, rehypeShikiOptions)
+			// rehype
+			.use(remarkRehype, { allowDangerousHtml: true })
+			.use(rehypeCallouts)
+			.use(rehypeShiki, rehypeShikiOptions)
 
-		// stringify
-		.use(rehypeStringify, { allowDangerousHtml: true })
-		.process(markdown);
+			// stringify
+			.use(rehypeStringify, { allowDangerousHtml: true })
+			.process(markdown)
+	);
 }
 
 // 사용자 정의 메타 문자열 값을 처리하는 함수

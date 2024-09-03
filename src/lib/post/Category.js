@@ -109,9 +109,8 @@ export default class Category {
 		const categoryAbsolutePath = splitPath.slice(0, index + 1).join('/');
 
 		if (absolutePaths.length > index + 1) {
-			const key =	Symbol.for(categoryAbsolutePath);
-			if (!this.#categories.has(key))
-				category.addChildCategory(new Category(categoryAbsolutePath));
+			const key = Symbol.for(categoryAbsolutePath);
+			if (!this.#categories.has(key)) category.addChildCategory(new Category(categoryAbsolutePath));
 			const targetCategory = this.#categories.get(key);
 
 			this.#initCategories(

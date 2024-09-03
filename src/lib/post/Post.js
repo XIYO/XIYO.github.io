@@ -30,7 +30,7 @@ export default class Post {
 	 * @returns {Post | undefined}
 	 */
 	static getPosts(absolutePath) {
-		const key =	Symbol.for(absolutePath);
+		const key = Symbol.for(absolutePath);
 		return Post.#posts.get(key);
 	}
 
