@@ -13,7 +13,7 @@
 		<ul class="padding">
 			{#each category.childCategories as childCategory}
 				<li>
-					<a href={i18n.route(childCategory.absolutePath)}
+					<a href={childCategory.absolutePath}
 						>{childCategory.name} ({childCategory.allPosts.length})</a
 					>
 				</li>
@@ -29,7 +29,7 @@
 		{#each category.allPosts as post}
 			<li>
 				<article>
-					<a href={i18n.route(post.absolutePath)}>{post.data.title}</a>
+					<a href={post.absolutePath}>{post.data.title}</a>
 				</article>
 			</li>
 		{/each}

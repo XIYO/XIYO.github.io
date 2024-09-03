@@ -1,4 +1,5 @@
 import Post from '$lib/post/Post.js';
+import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 
 const symbol = Symbol('Category initialization');
 
@@ -18,8 +19,15 @@ export default class Category {
 	 * @param {string} absolutePath 접근 가능한 절대 경로
 	 */
 	constructor(absolutePath) {
-		Category.#categories.set(absolutePath, this);
-		this.#absolutePath = absolutePath;
+		const key = Symbol.for(absolutePath);
+		Category.#categories.set(key, this);
+
+		const split = absolutePath.split('/');
+		if (availableLanguageTags.includes(split[1])) {
+			split.splice(1, 1); // 1번 인덱스의 요소를 제거
+		}
+
+		this.#absolutePath = split.join('/');
 	}
 
 	get name() {
@@ -77,7 +85,8 @@ export default class Category {
 	 * @returns {Category | undefined}
 	 */
 	static getCategory(absolutePath) {
-		return this.#categories.get(absolutePath);
+		const key = Symbol.for(absolutePath);
+		return this.#categories.get(key);
 	}
 
 	static [symbol]() {
@@ -98,10 +107,12 @@ export default class Category {
 		const splitPath = absolutePath.split('/');
 		const absolutePaths = splitPath;
 		const categoryAbsolutePath = splitPath.slice(0, index + 1).join('/');
+
 		if (absolutePaths.length > index + 1) {
-			if (!this.#categories.has(categoryAbsolutePath))
+			const key =	Symbol.for(categoryAbsolutePath);
+			if (!this.#categories.has(key))
 				category.addChildCategory(new Category(categoryAbsolutePath));
-			const targetCategory = this.#categories.get(categoryAbsolutePath);
+			const targetCategory = this.#categories.get(key);
 
 			this.#initCategories(
 				{ absolutePath, markdownAsync },

@@ -1,4 +1,5 @@
 import markdownProcessAsync from '$lib/plugin/markdown.js';
+import { availableLanguageTags } from '$lib/paraglide/runtime.js';
 
 export default class Post {
 	static #posts = new Map();
@@ -12,8 +13,14 @@ export default class Post {
 	 * @param {promise<object>} markdownAsync 마크다운 원본
 	 */
 	constructor({ absolutePath, markdownAsync }) {
-		Post.#posts.set(absolutePath, this);
-		this.#absolutePath = absolutePath;
+		const key = Symbol.for(absolutePath);
+		Post.#posts.set(key, this);
+
+		const split = absolutePath.split('/');
+		if (availableLanguageTags.includes(split[1])) {
+			split.splice(1, 1); // 1번 인덱스의 요소를 제거
+		}
+		this.#absolutePath = split.join('/');
 		this.#markdownAsync = markdownAsync;
 	}
 
@@ -23,7 +30,8 @@ export default class Post {
 	 * @returns {Post | undefined}
 	 */
 	static getPosts(absolutePath) {
-		return Post.#posts.get(absolutePath);
+		const key =	Symbol.for(absolutePath);
+		return Post.#posts.get(key);
 	}
 
 	get absolutePath() {
