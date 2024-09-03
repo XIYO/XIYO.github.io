@@ -1,39 +1,39 @@
-# 팝오버 API 사용하기
+# Using the Popover API
 
-저의 블로그 내비게이션은 `input` 태그를 이용해 토글 기능을 구현했습니다.
+My blog navigation used to implement a toggle feature using the `input` tag.
 
 ```html
 <input id="toggle-nav" type="checkbox" hidden />
 
 <div id="nav">
-	<label for="toggle-nav">토글</label>
-	메뉴...
+	<label for="toggle-nav">Toggle</label>
+	Menu...
 </div>
 ```
 
-`label`의 `for` 속성을 사용하여 보이지 않는 `input`을 토글할 수 있었지만, 이 방법은 유지보수성이 떨어지고, 현대적인 접근 방법이 아니었습니다. 이번에 이 코드를 최신 문법에 맞춰 개선했습니다. 코드의 목적은 no-js 환경에서도 동작을 보장하는 것입니다.
+Although I was able to toggle the invisible `input` by using the `for` attribute of the `label`, this approach lacked maintainability and was not a modern method. I have now updated this code to align with modern practices. The primary goal of this code is to ensure it works in a no-JS environment.
 
-이번 코드 교체도 현대적인 문법으로 변경함과 동시에 no-js 환경에서도 동작을 보장하는 기능이기 때문에 진행했습니다.
+This code replacement was carried out to both adopt modern syntax and ensure functionality in a no-JS environment.
 
-## 코드 교체
+## Code Replacement
 
-코드를 변경하는 작업은 상당히 간단했습니다.
+The process of changing the code was quite straightforward.
 
-1. `label` 태그 대신 실제로 버튼 역할을 하는 `button` 태그 사용
-2. 팝오버 대상에 새로운 속성 부여
-3. 사용자 정의 스타일 적용
+1. Use a `button` tag that actually acts as a button instead of the `label` tag.
+2. Add new attributes to the popover target.
+3. Apply custom styles.
 
 ```diff
 - <input id="toggle-nav" type="checkbox" hidden>
-+ <button popovertarget="nav" popoveraction="toggle">토글</button>
++ <button popovertarget="nav" popoveraction="toggle">Toggle</button>
 
 - <div id="nav">
 + <div id="nav" popover>
 
-- <label for="toggle-nav">토글</label>
-+ <button popovertarget="nav" popoveraction="toggle">토글</button>
+- <label for="toggle-nav">Toggle</label>
++ <button popovertarget="nav" popoveraction="toggle">Toggle</button>
 
-  메뉴...
+  Menu...
 </div>
 
 + <style>
@@ -45,18 +45,18 @@
 + </style>
 ```
 
-`label`의 `for` 속성을 사용하여 보이지 않는 `input`을 토글할 수 있었지만, 이 방법은 유지보수성이 떨어지고, 현대적인 접근 방식이 아니었습니다. 또한, 코드의 목적은 **no-js** 환경에서도 동작을 보장하는 것이었습니다. 이번에 이 코드를 최신 문법에 맞춰 개선하면서도 **no-js** 환경에서도 동작을 보장할 수 있도록 변경했습니다.
+While the previous method allowed toggling an invisible `input` using the `for` attribute of the `label`, it was not a maintainable or modern approach. Additionally, the goal was to ensure that the code would work in a **no-JS** environment. This update modernizes the code while still ensuring compatibility with **no-JS** environments.
 
-## 팝오버 API의 추가 기능
+## Additional Features of the Popover API
 
-팝오버 API는 외부 라이브러리 없이 HTML만으로 구현할 수 있어, 코드 의존성을 줄이고, 코드 길이를 최소화할 수 있는 기능을 제공합니다. 이는 코드 유지보수성 측면에서 큰 이점을 제공하며, 깔끔하고 관리하기 쉬운 코드를 작성할 수 있게 해줍니다.
+The Popover API offers features that can be implemented using only HTML, reducing code dependencies and minimizing code length. This provides significant benefits in terms of code maintainability, allowing developers to write clean and easy-to-manage code.
 
-1. **배경 흐림 처리**: 팝오버가 활성화되면 배경을 흐리게 만들어, 사용자 인터페이스에서 팝오버 내용에만 집중하도록 할 수 있습니다. 이 기능은 순수 HTML로 쉽게 구현할 수 있어, 추가적인 스크립트 없이도 시각적 효과를 간단히 추가할 수 있습니다.
+1. **Background Blur Effect**: When the popover is activated, you can blur the background to help users focus solely on the popover content. This can be easily implemented with pure HTML, adding visual effects without the need for additional scripts.
 
-2. **자동 닫힘 기능**: 사용자가 팝오버 외부를 클릭하거나 ESC 키를 누르면 팝오버가 자동으로 닫히도록 설정할 수 있습니다. 이 역시 HTML 속성만으로 구현 가능하여, 불필요한 자바스크립트 코드 작성 없이 기능을 완성할 수 있습니다.
+2. **Auto-Close Functionality**: You can set the popover to automatically close when the user clicks outside of it or presses the ESC key. This, too, can be implemented using just HTML attributes, eliminating the need for unnecessary JavaScript code.
 
-3. **애니메이션 효과**: 팝오버의 등장과 퇴장을 자연스럽게 만들어주는 애니메이션 효과도 HTML로 간단히 적용할 수 있어, 코드의 복잡도를 줄이며 유지보수를 용이하게 만듭니다.
+3. **Animation Effects**: Animation effects that smoothly transition the popover in and out can also be applied with HTML, reducing code complexity and making maintenance easier.
 
-그러나 이 API는 최신 브라우저에서만 지원되기 때문에, 호환성이 중요한 프로젝트에서는 사용에 주의가 필요합니다. 모든 사용자가 최신 브라우저를 사용하지 않을 수 있으므로, 개발 환경에 따라 적용 여부를 신중히 판단해야 합니다.
+However, since this API is only supported in modern browsers, caution is needed when using it in projects where compatibility is crucial. Not all users may be on the latest browsers, so careful consideration is required based on the development environment.
 
-팝오버 API를 사용하면 코드가 더욱 간결해지고, 외부 라이브러리 의존성을 줄일 수 있어, 코드의 가독성 및 유지보수성 면에서 개발자에게 큰 도움이 됩니다. 하지만 브라우저 호환성을 고려해야 하므로, 프로젝트의 요구 사항에 맞춰 적절히 활용하는 것이 중요합니다.
+Using the Popover API makes your code more concise and reduces reliance on external libraries, which greatly enhances code readability and maintainability for developers. However, due to the need for browser compatibility, it is essential to use this API appropriately according to the project's requirements.

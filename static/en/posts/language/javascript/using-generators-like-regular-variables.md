@@ -1,12 +1,12 @@
-# 제터레이터를 일반 변수처럼 사용하기
+# Using Generators Like Regular Variables
 
-자바스크립트에서 제너레이터를 이용하여 반복 가능한 객체를 만듭니다.
+In JavaScript, generators are used to create iterable objects.
 
-## 용도
+## Use Case
 
-피보나치같은 연산의 끝이 없는 함수를 제어가능한 이터러블로 만들 수 있습니다.
+Generators can be used to create controllable iterables for functions with infinite sequences, such as Fibonacci calculations.
 
-## 문법
+## Syntax
 
 ```javascript
 function* fibonacciGenerator() {
@@ -23,17 +23,17 @@ console.log(fibonacci.next().value); // 1
 console.log(fibonacci.next().value); // 1
 console.log(fibonacci.next().value); // 2
 
-// 또는 for...of 문을 사용하여 피보나치 수열 출력 (단, 종료 조건 필요)
+// Or use a for...of loop to print the Fibonacci sequence (with a termination condition)
 for (const value of fibonacci) {
     console.log(value); // 3, 5, 8, ...
     if (value >= 13) break;
 }
 ```
-> 가장 보편적인 제너레이터 문법 입니다.
+> This is the most common generator syntax.
 
-그러나 캡슐화가 되어 있지 않아 단순히 제너레이터를 그대로 사용하는 느낌입니다.
+However, this approach lacks encapsulation, making it feel like you're directly using the generator as-is.
 
-## 개선
+## Improvement
 
 ```javascript
 const fibonacci = {
@@ -57,14 +57,12 @@ console.log(fibonacci); // 1
 console.log(fibonacci); // 1
 console.log(fibonacci); // 2
 
-// 이터러블로 사용
+// Using as an iterable
 for (const value of fibonacci) {
     console.log(value); // 3, 5, 8, ...
-    if (value >= 13) break; // 무한 루프 방지
+    if (value >= 13) break; // Prevent infinite loop
 }
 ```
+> The generator is encapsulated and can now be used similarly to a variable.
 
-> 제너레이터를 캡슐화 하여 변수를 호출하는 방식처럼 바꾸었습니다.
-
-피보나치 변수를 호출하는 것 자체가 사이드 이펙트를 발생시키게 디자인 되어 "작동 시킨다"라는 개념으로 사용할 수 있게 바뀌었습니다.
-
+The Fibonacci variable itself is designed to produce side effects upon being accessed, allowing it to be used with the concept of "activating" or "running" the sequence.
