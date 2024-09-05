@@ -75,7 +75,7 @@
 		<main>
 			{@render children()}
 		</main>
-		<Footer />
+		<Footer gitLog={$page.data.gitLog} />
 	</div>
 	<Nav />
 </ParaglideJS>

@@ -8,6 +8,23 @@ const dummyDatetime = [
 	}
 ];
 
+/**
+ * Git 로그 정보를 추출하는 함수
+ * @param [method]
+ * @returns {string[]}
+ */
+function getGitLog(method) {
+	const gitCommand = ['log', '--pretty=format:%ad,%s,%an', '--date=format:%Y-%m-%dT%H:%M%z'];
+
+	if (method === 'first') {
+		gitCommand.push('--reverse');
+	} else if (method === 'last') {
+		gitCommand.push('-n', '1');
+	}
+
+	return gitCommand;
+}
+
 function getGitCommand(path) {
 	return ['log', '--follow', '--pretty=format:%ad,%s,%an', '--date=format:%Y-%m-%dT%H:%M%z', path];
 }
@@ -21,13 +38,17 @@ function gitLogParser(stdout) {
 		: dummyDatetime;
 }
 
+export function getAllGitLog() {
+	const gitCommand = getGitLog();
+	return getGitLogSync(gitCommand);
+}
+
 /**
  * Git 로그 정보를 추출하는 함수
- * @param filePath
+ * @param [gitCommand]
  * @returns {{datetime: string, comment: string}[]}
  */
-export function getGitLogSync(filePath) {
-	const gitCommand = getGitCommand(filePath);
+export function getGitLogSync(gitCommand) {
 	const { stdout } = spawnSync('git', gitCommand, { shell: false, encoding: 'utf8' });
 
 	return gitLogParser(stdout);

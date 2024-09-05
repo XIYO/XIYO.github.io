@@ -1,28 +1,19 @@
 <script>
 	import Border from '$lib/ui/Border.svelte';
-	import { onMount } from 'svelte';
+	import { languageTag } from '$lib/paraglide/runtime.js';
 
 	const { post } = $props();
 
-	let locale = 'ko';
+	const locale = new Intl.Locale(languageTag());
 
 	const firstCommitDate = new Date(post.gitLog.at(-1).datetime);
 	const lastCommitDate = new Date(post.gitLog.at(0).datetime);
 
-	const dateFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-	let dateTimeFormat = new Intl.DateTimeFormat(locale, dateFormatOptions);
+	const dateFormatOptions = { year: '2-digit', month: '2-digit', day: '2-digit' };
+	const dateTimeFormat = new Intl.DateTimeFormat(locale.baseName, dateFormatOptions);
 
-	let firstCommitDateString = $state(dateTimeFormat.format(firstCommitDate));
-	let lastCommitDateString = $state(dateTimeFormat.format(lastCommitDate));
-
-	onMount(() => {
-		locale = navigator.language; // 브라우저 언어 설정 가져오기
-
-		dateTimeFormat = new Intl.DateTimeFormat(locale, dateFormatOptions);
-
-		firstCommitDateString = dateTimeFormat.format(firstCommitDate);
-		lastCommitDateString = dateTimeFormat.format(lastCommitDate);
-	});
+	const firstCommitDateString = dateTimeFormat.format(firstCommitDate);
+	const lastCommitDateString = dateTimeFormat.format(lastCommitDate);
 </script>
 
 <Border viewTransitionName="post" negative>

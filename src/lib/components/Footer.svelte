@@ -1,71 +1,112 @@
+<script>
+	import { languageTag } from '$lib/paraglide/runtime.js';
+
+	const { gitLog } = $props();
+
+	const locale = new Intl.Locale(languageTag());
+
+	const firstCommitDate = new Date(gitLog.at(0).datetime);
+
+	const dateFormatOptions = { year: '2-digit', month: '2-digit', day: '2-digit' };
+	const dateTimeFormat = new Intl.DateTimeFormat(locale.baseName, dateFormatOptions);
+
+	const firstCommitDateString = dateTimeFormat.format(firstCommitDate);
+</script>
+
 <footer>
-	Made By
-	<a id="made-by" href="https://svelte.dev" target="_blank">Svelte Rune</a>, Designed By
-	<label>
-		chimi
-		<input type="checkbox" hidden />
-	</label>
+	<div>
+		Made By
+		<a id="made-by" href="https://svelte.dev" target="_blank">Svelte Rune</a>, Designed By
+		<button id="design-by">
+			chimi
+		</button>
+	</div>
+	<div id="git-log">
+		<span><span class="heading">last commit :</span> {firstCommitDateString}</span>
+		<span><span class="heading">comment :</span> {gitLog.at(0).comment}</span>
+	</div>
 </footer>
 
 <style>
-	footer {
-		font-size: 0.75rem;
-		text-align: center;
-		margin-block: var(--default-margin);
+    footer {
+        font-size: 0.75rem;
+        text-align: center;
+        margin-block: var(--default-margin);
 
-		view-transition-name: footer;
-		view-transition-class: after-view-transition;
+        view-transition-name: footer;
+        view-transition-class: after-view-transition;
 
-		user-select: none;
-	}
+        user-select: none;
+    }
 
-	#made-by::after {
-		content: '';
-		display: inline-block;
-		margin-inline-start: 0.25rem;
-		width: 1rem;
-		height: 1rem;
-		background-image: url('/svelte-logo.svg');
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
-		vertical-align: middle;
-	}
+    #made-by::after {
+        content: '';
+        display: inline-block;
+        margin-inline-start: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+        background-image: url('/svelte-logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        vertical-align: middle;
+    }
 
-	label {
-		cursor: pointer;
-		text-align: center;
-		align-content: center;
+    #design-by {
+        /* reset */
+        border: unset;
+        color: unset;
+        background-color: unset;
 
-		&::after {
-			content: '🎈';
-			display: inline-block;
-			margin-inline-start: 0.25rem;
-		}
+        text-align: center;
+        align-content: center;
 
-		&:has(input:checked)::after {
-			content: '💥';
-		}
-	}
+        &::after {
+            content: '🎈';
+            display: inline-block;
+            margin-inline-start: 0.25rem;
+        }
 
-	@media (prefers-reduced-motion: no-preference) {
-		label {
-			display: inline-block;
-			animation: float 3s infinite linear;
+        &:not(:focus) {
+					cursor: pointer;
+        }
 
-			&:has(input:checked) {
-				animation-play-state: paused;
-			}
-		}
-	}
+        &:focus::after {
+            content: '💥';
+        }
+    }
 
-	@keyframes float {
-		25% {
-			transform: translateY(25%);
-		}
+    #git-log {
+        text-align: end;
 
-		75% {
-			transform: translateY(-25%);
-		}
-	}
+        & > * {
+            display: block;
+        }
+
+        .heading {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        #design-by {
+            display: inline-block;
+            animation: float 3s infinite linear;
+
+            &:focus {
+                animation-play-state: paused;
+            }
+        }
+    }
+
+    @keyframes float {
+        25% {
+            transform: translateY(25%);
+        }
+
+        75% {
+            transform: translateY(-25%);
+        }
+    }
 </style>
