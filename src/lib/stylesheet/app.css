@@ -37,7 +37,7 @@
 	--default-anmiation-delay-new: calc(var(--default-animation-duration) * 2);
 
 	/* 기본 스타일링 */
-	font-family: 'Pretendard Variable', sans-serif;
+	font-family: 'Pretendard', sans-serif;
 
 	-ms-text-size-adjust: 100%; /* IE, old Edge */
 	-webkit-text-size-adjust: 100%; /* Chrome, Safari, new Edge */
