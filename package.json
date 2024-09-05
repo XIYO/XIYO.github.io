@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"translate:md": "lobe-i18n md"
 	},
 	"devDependencies": {
 		"@inlang/paraglide-js": "1.11.2",
@@ -46,6 +47,7 @@
 	"type": "module",
 	"packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
 	"dependencies": {
-		"@inlang/paraglide-sveltekit": "0.11.0"
+		"@inlang/paraglide-sveltekit": "0.11.0",
+		"@lobehub/i18n-cli": "^1.19.1"
 	}
 }
