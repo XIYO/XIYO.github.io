@@ -17,9 +17,11 @@
 	<div>
 		Made By
 		<a id="made-by" href="https://svelte.dev" target="_blank">Svelte Rune</a>, Designed By
-		<button id="design-by">
-			chimi
-		</button>
+		<span id="design-by" tabindex="-1" >
+			{#each 'chimi' as letter, i}
+				<span style:--delay={i}>{letter}</span>
+			{/each}
+		</span>
 	</div>
 	<div id="git-log">
 		<span><span class="heading">last commit :</span> {firstCommitDateString}</span>
@@ -53,11 +55,6 @@
     }
 
     #design-by {
-        /* reset */
-        border: unset;
-        color: unset;
-        background-color: unset;
-
         text-align: center;
         align-content: center;
 
@@ -91,8 +88,11 @@
 
     @media (prefers-reduced-motion: no-preference) {
         #design-by {
-            display: inline-block;
-            animation: float 3s infinite linear;
+						span {
+                display: inline-block;
+                animation: float 3s infinite linear;
+                animation-delay: calc(var(--delay) * 0.25s);
+            }
 
             &:focus {
                 animation-play-state: paused;
