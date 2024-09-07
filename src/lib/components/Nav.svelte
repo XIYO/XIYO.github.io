@@ -3,6 +3,7 @@
 	import Border from '$lib/ui/Border.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
 	import { availableLanguageTags } from '$lib/paraglide/runtime.js';
+	import * as m from '$lib/paraglide/messages.js';
 
 	import { i18n } from '$lib/i18n.js';
 </script>
@@ -41,7 +42,7 @@
 	</div>
 
 	<div id="nav-footer" class="padding">
-		<a href="https://github.com/XIYO" target="_blank" aria-label="이요의 깃허브">
+		<a href="https://github.com/XIYO" target="_blank" aria-label={m.github()}>
 			<svg width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
 				<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
 				<path

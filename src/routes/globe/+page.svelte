@@ -1,14 +1,15 @@
 <script>
 	import Border from '$lib/ui/Border.svelte';
 	import jjakak from '$lib/assets/jjakak.jpeg?enhanced';
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <Border viewTransitionName="article" negative id="article">
 	<div class="gloves padding">
 		<a class="glove content" href="https://jjakak.xiyo.dev" target="_blank">
-			<enhanced:img src={jjakak} alt="째깍 타이머 미리보기" />
+			<enhanced:img src={jjakak} alt={m.jjakakImgAlt()} />
 			<h2>JJaKaK</h2>
-			<p>심플 타이머. PWA로 구현로 구현되어 있어 브라우저에서 앱으로 바로 설치가 가능합니다.</p>
+			<p>{m.jjakakDescription()}</p>
 		</a>
 	</div>
 </Border>
