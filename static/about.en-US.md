@@ -2,7 +2,7 @@
 
 **Nickname:**
 
-- XIYO (pronounced "ee-yo," derived from the name of the rabbit in "Dugeun Dugeun Secret Friend")
+- XIYO (pronounced "ee-yo", derived from the name of the rabbit in "Animal Yokochō")
 
 **Likes:**
 
