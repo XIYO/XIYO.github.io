@@ -1,5 +1,6 @@
 import markdownProcessAsync from '$lib/plugin/markdown.js';
 import { availableLanguageTags } from '$lib/paraglide/runtime.js';
+import { i18n } from '$lib/i18n.js';
 
 export default class Post {
 	static #posts = new Map();
@@ -33,8 +34,16 @@ export default class Post {
 	 * @returns {Post | undefined}
 	 */
 	static getPosts(absolutePath) {
-		const key = Symbol.for(absolutePath);
-		return Post.#posts.get(key);
+		const key = Symbol.for(absolutePath)
+		let post = Post.#posts.get(key);
+
+		if (!post) {
+			const alternativePath = i18n.route(absolutePath);
+			const alternativeKey = Symbol.for(alternativePath);
+			post = this.#posts.get(alternativeKey);
+		}
+
+		return post;
 	}
 
 	get absolutePath() {

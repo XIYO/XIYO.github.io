@@ -19,10 +19,11 @@ module.exports = defineConfig({
 		entry: ['static/**/*'],
 		entryLocale: 'ko-KR',
 		entryExtension: '.md',
-		exclude: ['**/*.en-US.md'],
+		exclude: ['**/*.en-US.md', '**/*.ja-JP.md'],
 		// exclude: ['markdown/en-US', 'markdown/zh-CN', 'markdown/ja-JP'],
 		outputLocales: [
-			'en-US'
+			'en-US',
+			'ja-JP',
 		],
 	}
 });

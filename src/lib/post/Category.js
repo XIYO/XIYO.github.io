@@ -1,5 +1,6 @@
 import Post from '$lib/post/Post.js';
-import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js'
+import { i18n } from '$lib/i18n.js'
 
 const symbol = Symbol('Category initialization');
 
@@ -86,7 +87,15 @@ export default class Category {
 	 */
 	static getCategory(absolutePath) {
 		const key = Symbol.for(absolutePath);
-		return this.#categories.get(key);
+		let category = this.#categories.get(key);
+
+		if (!category) {
+			const alternativePath = i18n.route(absolutePath);
+			const alternativeKey = Symbol.for(alternativePath);
+			category = this.#categories.get(alternativeKey);
+		}
+
+		return category;
 	}
 
 	static [symbol]() {
