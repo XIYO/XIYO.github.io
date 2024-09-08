@@ -5,8 +5,6 @@
 	 * borderOuterViewTransitionClass?: string,
 	 * borderInnerViewTransitionClass?: string,
 	 * borderContentViewTransitionClass?: string,
-	 * padding?: boolean,
-	 * content?: boolean,
 	 * negative?: boolean,
 	 * id?: string,
 	 * tag?: string,
