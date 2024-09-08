@@ -1,6 +1,6 @@
 <script>
 	/**
-	 * @type {{ popovertargetaction: 'toggle' | 'hide' | 'show' | null | undefined }}
+	 * @type {{ popovertargetaction?: 'toggle' | 'hide' | 'show' | null | undefined }}
 	 */
 	const { popovertargetaction } = $props();
 </script>
@@ -13,8 +13,8 @@
 	button {
 		/* reset */
 		border: unset;
+		background-color: unset;
 
-		background-color: var(--color-default-white);
 
 		&::after {
 			content: '⛱️';
