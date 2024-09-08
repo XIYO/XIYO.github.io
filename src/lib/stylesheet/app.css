@@ -76,12 +76,8 @@ img {
 	max-inline-size: 100%;
 }
 
-:not(pre) > code {
-	background-color: var(--color-default-black);
-	border-radius: var(--inner-border-radius);
-	padding: 0.125rem 0.25rem;
-	color: var(--color-primary-sub);
-	font-weight: bold;
+li {
+	line-height: 1.25rem;
 }
 
 .padding {
@@ -167,6 +163,17 @@ figure {
 	}
 }
 
+code {
+	font-family: 'Neo둥근모 Code', monospace;
+}
+
+:not(pre) > code {
+	background-color: var(--color-default-black);
+	border-radius: var(--inner-border-radius);
+	padding: 0.125rem 0.25rem;
+	color: var(--color-default-white);
+}
+
 /* shiki custom css */
 
 pre {
@@ -177,8 +184,6 @@ pre {
 	}
 
 	code {
-		font-family: 'Neo둥근모 Code', monospace;
-
 		counter-reset: line;
 
 		display: block;
@@ -253,7 +258,6 @@ kbd {
 		0 0 0 2px #fff inset;
 	color: #333;
 	display: inline-block;
-	font-family: 'Neo둥근모 Code', monospace;
 	font-size: 1rem;
 	line-height: 1.4;
 	margin: 0 0.1em;
