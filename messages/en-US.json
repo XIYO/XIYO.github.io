@@ -3,5 +3,6 @@
 	"welcome": "For those who prefer no JS and no CSS! A blog built entirely with Svelte, even considering terminal browsers! (Responsiveness is enhanced if JS is enabled!)",
 	"github": "XIYO's GitHub",
 	"jjakakImgAlt": "JJaKak timer image",
-	"jjakakDescription": "Simple timer. Implemented as PWA, so you can install it as an app directly from your browser."
+	"jjakakDescription": "Simple timer. Implemented as PWA, so you can install it as an app directly from your browser.",
+	"subCategoryEmpty": "There are no subcategories."
 }
