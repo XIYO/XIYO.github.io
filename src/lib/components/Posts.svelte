@@ -1,28 +1,31 @@
 <script>
 	import Border from '$lib/ui/Border.svelte';
 	import BorderHeader from '$lib/ui/BorderHeader.svelte';
-	import { i18n } from '$lib/i18n.js';
+	import * as m from '$lib/paraglide/messages.js';
 
 	const { category } = $props();
 </script>
 
-{#if category.childCategories.length}
+<div id="posts-post-container">
 	<Border id="category" viewTransitionName="category" negative>
 		<BorderHeader title="categories" />
 
-		<ul class="padding">
-			{#each category.childCategories as childCategory}
-				<li>
-					<a href={childCategory.absolutePath}
-						>{childCategory.name} ({childCategory.allPosts.length})</a
-					>
-				</li>
-			{/each}
-		</ul>
+		{#if category.childCategories.length}
+			<ul class="padding">
+				{#each category.childCategories as childCategory}
+					<li>
+						<a href={childCategory.absolutePath}>
+							{childCategory.name} ({childCategory.allPosts.length})
+						</a>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<p class="padding margin-block-reset">{m.subCategoryEmpty()}</p>
+		{/if}
 	</Border>
-{/if}
 
-<Border id="article" viewTransitionName="article" negative>
+<Border id="article" viewTransitionName="posts" negative>
 	<BorderHeader title="posts" />
 
 	<ul class="padding">
@@ -35,10 +38,19 @@
 		{/each}
 	</ul>
 </Border>
+</div>
 
 <style>
-	:global(#border-outer-category, #border-outer-article) {
-		margin-block: var(--default-margin);
+	#posts-post-container {
+		display: grid;
+		gap: var(--default-margin);
+
+		@container main ( 768px <= inline-size) {
+		 grid-template-columns: repeat(2, 1fr);
+			& > :global(*) {
+			  block-size: fit-content;
+		  }
+		}
 	}
 
 	ul {
