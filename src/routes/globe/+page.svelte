@@ -4,7 +4,7 @@
 	import * as m from '$lib/paraglide/messages.js';
 </script>
 
-<Border viewTransitionName="article" negative id="article">
+<Border viewTransitionName="post" negative id="article">
 	<div class="gloves padding">
 		<a class="glove content" href="https://jjakak.xiyo.dev" target="_blank">
 			<enhanced:img src={jjakak} alt={m.jjakakImgAlt()} />

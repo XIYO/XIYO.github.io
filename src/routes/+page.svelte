@@ -3,7 +3,7 @@
 	import * as m from '$lib/paraglide/messages.js';
 </script>
 
-<Border viewTransitionName="article" negative>
+<Border viewTransitionName="post" negative>
 	<div class="padding content">
 		<p>{m.welcome()}</p>
 	</div>
