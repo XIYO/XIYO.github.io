@@ -78,6 +78,30 @@ img {
 	max-inline-size: 100%;
 }
 
+.margin {
+	margin: var(--default-margin);
+}
+
+.margin-block {
+	margin-block: var(--default-margin);
+}
+
+.margin-inline {
+	margin-inline: var(--default-margin);
+}
+
+.margin-reset {
+	margin: unset;
+}
+
+.margin-block-reset {
+	margin-block: unset;
+}
+
+.margin-inline-reset {
+	margin-inline: unset;
+}
+
 .padding {
 	padding: var(--default-padding);
 }

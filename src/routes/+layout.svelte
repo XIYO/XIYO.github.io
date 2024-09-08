@@ -72,7 +72,7 @@
 <ParaglideJS {i18n}>
 	<div id="container-content">
 		<Header title={$page.data.title} />
-		<main>
+		<main class="margin-block">
 			{@render children()}
 		</main>
 		<Footer gitLog={$page.data.gitLog} />
@@ -84,6 +84,10 @@
 	#container-content {
 		margin: var(--default-margin);
 		container: inline-size container-cotent;
+	}
+
+	main {
+			container: main /	inline-size;
 	}
 
 	/**
