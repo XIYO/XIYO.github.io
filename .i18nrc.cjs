@@ -16,11 +16,9 @@ module.exports = defineConfig({
 		jsonMode: true,
 	},
 	markdown: {
-		entry: ['static/**/*'],
+		entry: ['static'],
 		entryLocale: 'ko-KR',
-		entryExtension: '.md',
-		exclude: ['**/*.en-US.md', '**/*.ja-JP.md'],
-		// exclude: ['markdown/en-US', 'markdown/zh-CN', 'markdown/ja-JP'],
+		exclude: ['static/en-US', 'static/zh-CN', 'static/ja-JP', '**/*.en-US.md', '**/*.ja-JP.md'],
 		outputLocales: [
 			'en-US',
 			'ja-JP',
