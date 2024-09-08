@@ -14,7 +14,7 @@
 </script>
 
 <footer>
-	<div>
+	<div id="by">
 		Made By
 		<a id="made-by" href="https://svelte.dev" target="_blank">Svelte Rune</a>, Designed By
 		<span id="design-by" tabindex="-1" >
@@ -40,6 +40,10 @@
 
         user-select: none;
     }
+
+		#by {
+				margin-block-end: var(--default-margin);
+		}
 
     #made-by::after {
         content: '';
