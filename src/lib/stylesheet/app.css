@@ -62,10 +62,8 @@ body {
 	min-block-size: 100lvh;
 }
 
-main {
-	p {
-		line-height: 1.5rem;
-	}
+p, li {
+	line-height: 1.25em;
 }
 
 a {
@@ -78,10 +76,6 @@ a {
 
 img {
 	max-inline-size: 100%;
-}
-
-li {
-	line-height: 1.25rem;
 }
 
 .padding {
