@@ -106,22 +106,17 @@ export default class Category {
 				.replace(/^\/static/, '') // 스태틱 경로 제거
 				.replace(/\.md$/, ''); // 확장자 제거
 
-			let locale = absolutePath.split('.').at(-1); //	기본언어의 경우, 로케일 정보가 없을수도 있음
-			locale = availableLanguageTags.includes(locale) ? locale : '';
-			absolutePath = absolutePath.replace(`.${locale}`, ''); // 로케일 정보 제거
-
-			this.#initCategories({ absolutePath, markdownAsync, locale });
+			this.#initCategories({ absolutePath, markdownAsync });
 		});
 	}
 
 	static #initCategories(
-		{ absolutePath, markdownAsync, locale },
+		{ absolutePath, markdownAsync },
 		{ category = this.#root, index = 0 } = {}
 	) {
 		const splitPath = absolutePath.split('/');
 		const absolutePaths = splitPath;
-		let categoryAbsolutePath = splitPath.slice(0, index + 1).join('/');
-		categoryAbsolutePath = locale ? `/${locale}${categoryAbsolutePath}` : categoryAbsolutePath;
+		const categoryAbsolutePath = splitPath.slice(0, index + 1).join('/');
 
 		if (absolutePaths.length > index + 1) {
 			const key = Symbol.for(categoryAbsolutePath);
@@ -129,11 +124,11 @@ export default class Category {
 			const targetCategory = this.#categories.get(key);
 
 			this.#initCategories(
-				{ absolutePath, markdownAsync, locale },
+				{ absolutePath, markdownAsync },
 				{ category: targetCategory, index: index + 1 }
 			);
 		} else {
-			const post = new Post({ absolutePath, markdownAsync, locale });
+			const post = new Post({ absolutePath, markdownAsync });
 			category.addPost(post);
 		}
 	}
