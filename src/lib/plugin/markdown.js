@@ -6,6 +6,8 @@ import rehypeCallouts from 'rehype-callouts';
 import rehypeShiki from '@shikijs/rehype';
 import rehypeStringify from 'rehype-stringify';
 import { visit } from 'unist-util-visit';
+import sizeOf from 'image-size';
+import { join } from 'node:path';
 
 export default async function markdownAsync({ markdown }) {
 	return (
@@ -76,6 +78,24 @@ function ExtractTitleAndPathRemove() {
 			}
 
 			if (node.type === 'image' && node.url.startsWith('/static')) {
+				// 이미지 태그에 width 속성을 추가합니다.
+				const imagePath = join(process.cwd(), node.url);
+
+				let width = 768;
+				try {
+					({ width } = sizeOf(imagePath));
+				} catch (err) {
+					console.error(`Error reading image size for ${imagePath}:`, err);
+				}
+
+				node.data = node.data || {};
+				node.data.hProperties = {
+					...node.data.hProperties,
+					width,
+					height: 'auto',
+				};
+
+				// 최종 빌드에서 보이지 않아야할 경로를 제거합니다.
 				node.url = node.url.replace('/static', '');
 			}
 		});

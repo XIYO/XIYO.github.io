@@ -51,6 +51,7 @@
 	"dependencies": {
 		"@inlang/paraglide-sveltekit": "0.11.0",
 		"@lobehub/i18n-cli": "^1.19.1",
-		"@lunariajs/core": "^0.1.1"
+		"@lunariajs/core": "^0.1.1",
+		"image-size": "^1.1.1"
 	}
 }
