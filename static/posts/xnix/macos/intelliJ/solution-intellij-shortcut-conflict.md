@@ -15,7 +15,7 @@ _IntelliJ_ 단축키 충돌 문제를 해결하는 방법을 알아봅니다.
 
 ## PROBLEM
 
-![단축키 충돌 경고](/resources/2023-10-27-11-00-19.png)
+![단축키 충돌 경고](/static/resources/2023-10-27-11-00-19.png)
 
 단축키 충돌이라는 경고가 떳습니다.
 
@@ -23,7 +23,7 @@ _IntelliJ_ 단축키 충돌 문제를 해결하는 방법을 알아봅니다.
 
 ### INTELLIJ
 
-![단축키 충돌 확인](/resources/2023-10-27-11-10-04.png)
+![단축키 충돌 확인](/static/resources/2023-10-27-11-10-04.png)
 
 _Modify Shorcuts_ 링크를 통해 _Keymap_ 을 확인해보니 확인해보니 <kbd>⇧</kbd> + <kbd>⌘</kbd> + <kbd>A</kbd> 단축키가 충돌이 났습니다.
 
@@ -33,14 +33,14 @@ _Modify Shorcuts_ 링크를 통해 _Keymap_ 을 확인해보니 확인해보니 
 
 0. **설정 화면** :
 
-   ![설정에서 키보드 단축키 화면 접근하는 방법](/resources/2023-10-27-11-52-59.png)
+   ![설정에서 키보드 단축키 화면 접근하는 방법](/static/resources/2023-10-27-11-52-59.png)
 
    0. _Keyboard_ 메뉴 클릭
    1. _Keyboard Shortcuts_ 버튼 클릭
 
 1. **키보드 단축키 화면** :
 
-   ![소노마의 단축키 설정 확인](/resources/2023-10-27-11-59-56.png)
+   ![소노마의 단축키 설정 확인](/static/resources/2023-10-27-11-59-56.png)
 
    0. _Services_ 메뉴 클릭
    1. _Text_ 항목 클릭
@@ -48,7 +48,7 @@ _Modify Shorcuts_ 링크를 통해 _Keymap_ 을 확인해보니 확인해보니 
 
 ## WHAT IS _SEARCH MAN PAGE INDEX IN TERMINAL_?
 
-![단축키 실행 결과](/resources/2023-10-27-12-08-57.png)
+![단축키 실행 결과](/static/resources/2023-10-27-12-08-57.png)
 
 이 기능은 선택한 텍스트를 터미널에서 매뉴얼 옵션으로 전달하는 역할을 합니다. \
 그리고 매뉴얼이 시스템에 있다면 출력됩니다.

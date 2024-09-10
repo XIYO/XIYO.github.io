@@ -200,14 +200,14 @@ Set it to run immediately after the drive is mounted.
 
 ### WEB UI
 
-![Windows 11, accessed via Edge](/resources/2023-11-12-22-17-45.png)
+![Windows 11, accessed via Edge](/static/resources/2023-11-12-22-17-45.png)
 
 You can access the web *UI* by navigating to *<http://RouterIP:9091>* in your browser. \
 The *ID* and password are the values set in the configuration file.
 
 ### TRANSMISSION CLIENT
 
-![Windows 11, server information input screen in Transmission client](/resources/2023-11-12-21-28-02.png)
+![Windows 11, server information input screen in Transmission client](/static/resources/2023-11-12-21-28-02.png)
 
 The Transmission client has the capability to access remote servers. \
 After launching, simply enter the same information as you would for web access.

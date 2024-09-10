@@ -1,6 +1,6 @@
 # SSH FSの使用
 
-![VS CodeでSSH FSに接続した画面](/resources/2023-10-22-11-55-54.png)
+![VS CodeでSSH FSに接続した画面](/static/resources/2023-10-22-11-55-54.png)
 
 *VS Code*の*SSH FS*を使用して、便利にファイルを管理する方法を学びます。
 
@@ -53,7 +53,7 @@
 
 ## 使用方法
 
-![SSH FS設定画面](/resources/2023-10-22-13-40-10.png)
+![SSH FS設定画面](/static/resources/2023-10-22-13-40-10.png)
 
 *SSH*接続と同じ接続情報を要求します。
 

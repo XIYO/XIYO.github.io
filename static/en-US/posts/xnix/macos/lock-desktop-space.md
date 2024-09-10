@@ -12,7 +12,7 @@ Mission Control provides an overview of all currently open windows and full-scre
 
 ## SOLUTION
 
-![Mission Control Options Settings Screen](/resources/2023-10-27-13-36-46.png)
+![Mission Control Options Settings Screen](/static/resources/2023-10-27-13-36-46.png)
 
 0. **Settings Screen**:
 

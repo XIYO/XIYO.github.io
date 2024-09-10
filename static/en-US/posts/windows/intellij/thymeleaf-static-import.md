@@ -6,7 +6,7 @@ When writing code, it can be inconvenient if IntelliJ fails to recognize JavaScr
 
 ## Cause
 
-![Failure to Recognize Static Resources in IntelliJ](/resources/2024-01-16-13-38-33.png)
+![Failure to Recognize Static Resources in IntelliJ](/static/resources/2024-01-16-13-38-33.png)
 
 When importing JavaScript files into HTML in a Spring Boot project, there is a problem with IntelliJ not correctly locating the path to the JavaScript files. This is due to the resource directory settings in IntelliJ.
 
@@ -14,7 +14,7 @@ When importing JavaScript files into HTML in a Spring Boot project, there is a p
 
 Add the `src/main/resources/static` directory as a resource in the **Project Structure** window of IntelliJ.
 
-![How to Register Resource Paths](/resources/2024-01-16-13-38-45.png)
+![How to Register Resource Paths](/static/resources/2024-01-16-13-38-45.png)
 
 > **Tip**
 >

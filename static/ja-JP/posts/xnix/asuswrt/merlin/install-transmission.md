@@ -201,14 +201,14 @@ Transmissionは追加ストレージを使用しているため、ストレー�
 
 ### ウェブUI
 
-![Windows 11、Edgeで接続した画面](/resources/2023-11-12-22-17-45.png)
+![Windows 11、Edgeで接続した画面](/static/resources/2023-11-12-22-17-45.png)
 
 ブラウザで*<http://ルーターIP:9091>*に接続すると、ウェブ*UI*を確認できます。 \
 *ID*とパスワードは設定ファイルで設定した値です。
 
 ### Transmissionクライアント
 
-![Windows 11、Transmissionクライアントでサーバー情報入力画面](/resources/2023-11-12-21-28-02.png)
+![Windows 11、Transmissionクライアントでサーバー情報入力画面](/static/resources/2023-11-12-21-28-02.png)
 
 Transmissionクライアントはリモートサーバーへのアクセス機能があります。 \
 実行後、ウェブアクセスと同じ情報を入力すれば大丈夫です。
