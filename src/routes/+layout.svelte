@@ -77,8 +77,8 @@
 		</main>
 		<Footer gitLog={$page.data.gitLog} />
 	</div>
-	<Nav />
 </ParaglideJS>
+	<Nav />
 
 <style>
 	#container-content {

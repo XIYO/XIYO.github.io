@@ -1,11 +1,12 @@
 <script>
-	import { page } from '$app/stores';
 	import Border from '$lib/ui/Border.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
-	import { availableLanguageTags } from '$lib/paraglide/runtime.js';
 	import * as m from '$lib/paraglide/messages.js';
 
 	import { i18n } from '$lib/i18n.js';
+	import LangSwitch from '$lib/LangSwitch.svelte';
+	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+	import NavMenu from '$lib/NavMenu.svelte';
 </script>
 
 <Border viewTransitionName="nav" tag="nav" id="nav" popover="manual">
@@ -15,30 +16,10 @@
 	</div>
 
 	<div id="nav-main" class="padding content negative">
-		<ul>
-			<li aria-current={i18n.route($page.url.pathname) === '/' ? 'page' : undefined}>
-				<a href="/">home</a>
-			</li>
-			<li aria-current={i18n.route($page.url.pathname).startsWith('/posts') ? 'page' : undefined}>
-				<a href="/posts">posts</a>
-			</li>
-			<li aria-current={i18n.route($page.url.pathname) === '/about' ? 'page' : undefined}>
-				<a href="/about">about</a>
-			</li>
-			<li aria-current={i18n.route($page.url.pathname) === '/globe' ? 'page' : undefined}>
-				<a href="/globe">globe</a>
-			</li>
-		</ul>
-
-		<ul id="lang">
-			{#each availableLanguageTags as lang}
-				<li>
-					<a href={i18n.route($page.url.pathname)} hreflang={lang}>
-						{lang}
-					</a>
-				</li>
-			{/each}
-		</ul>
+		<ParaglideJS {i18n}>
+			<NavMenu />
+			<LangSwitch />
+		</ParaglideJS>
 	</div>
 
 	<div id="nav-footer" class="padding">
@@ -101,28 +82,6 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
-
-			ul {
-				/* reset */
-				padding-inline-start: unset;
-				list-style-type: none;
-			}
-
-			li {
-				margin-block: var(--default-margin);
-
-				&[aria-current='page'] {
-					color: var(--color-primary);
-				}
-			}
-
-			#lang {
-				text-align: end;
-
-				ul {
-					margin-block-end: unset;
-				}
-			}
 		}
 
 		#nav-footer {
