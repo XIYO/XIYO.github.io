@@ -45,7 +45,7 @@ jobs:
         run: echo "Playwright version - ${{env.PLAYWRIGHT_VERSION}}"
 
       - name: Cache playwright binaries
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4
         id: playwright-cache
         with:
           path: |
@@ -62,24 +62,25 @@ jobs:
           pnpm run build
 
       - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          # this should match the `pages` option in your adapter-static options
-          path: 'build/'
+          name: blog
+          path: 'build/'  # 빌드된 파일의 경로
+
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
 
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Download artifact  # 아티팩트를 수동으로 다운로드하는 단계
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: blog  # 이전 단계에서 업로드한 아티팩트 이름
+          path: './build'  # 다운로드할 경로
+
+      - name: Deploy to Cloudflare Pages with Wrangler  # Wrangler 액션 사용
+        uses: cloudflare/wrangler-action@v3.7.0  # Wrangler 액션 사용
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: 'build'  # 빌드된 파일이 있는 디렉토리
