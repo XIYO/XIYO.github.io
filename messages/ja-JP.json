@@ -1,5 +1,6 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"title": "イヨのホール",
 	"welcome": "no js、no cssのための！ターミナルブラウザまで考えた…svelteで自分で作ったブログ！です。 （JSが有効になっていると反応性が向上します！）",
 	"github": "伊予の旗ハブ",
 	"jjakakImgAlt": "JJaKak タイマー画像",
