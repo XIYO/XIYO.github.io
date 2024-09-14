@@ -82,17 +82,25 @@ function ExtractTitleAndPathRemove() {
 				const imagePath = join(process.cwd(), node.url);
 
 				let width = 768;
+				let height;
+
 				try {
-					({ width } = sizeOf(imagePath));
+					({ width, height } = sizeOf(imagePath));
 				} catch (err) {
 					console.error(`Error reading image size for ${imagePath}:`, err);
 				}
+
+				// 최대 공약수를 사용하여 비율을 정수로 만듭니다.
+				const gcdValue = gcd(width, height);
+				const aspectWidth = width / gcdValue;
+				const aspectHeight = height / gcdValue;
 
 				node.data = node.data || {};
 				node.data.hProperties = {
 					...node.data.hProperties,
 					width,
 					height: 'auto',
+					style: `aspect-ratio: ${aspectWidth} / ${aspectHeight};`
 				};
 
 				// 최종 빌드에서 보이지 않아야할 경로를 제거합니다.
@@ -100,4 +108,15 @@ function ExtractTitleAndPathRemove() {
 			}
 		});
 	};
+}
+
+// 최대 공약수(GCD)를 구하는 함수
+function gcd(a, b) {
+	if (!b) return a;
+	return gcd(b, a % b);
+}
+
+// 최소 공배수(LCM)를 구하는 함수
+function lcm(a, b) {
+	return (a * b) / gcd(a, b);
 }
