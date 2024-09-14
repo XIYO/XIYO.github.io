@@ -83,4 +83,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3.7.0  # Wrangler 액션 사용
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy ./build  --project-name=blog
+          command: pages deploy ./build  --project-name=blog-xiyo
