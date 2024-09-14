@@ -37,6 +37,7 @@
 
 <svelte:head>
 	<title>{$page.data.title}</title>
+	<meta name="description" content={$page.data.description} />
 	<link rel="canonical" href={$page.url.origin + $page.url.pathname} />
 	{#if $page.data.og.title}
 		<meta property="og:title" content={$page.data.og.title} />
