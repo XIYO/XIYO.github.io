@@ -1,5 +1,6 @@
 import Category from '$lib/post/Category.js';
 import Post from '$lib/post/Post.js';
+import * as m from '$lib/paraglide/messages.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ url }) {
@@ -8,7 +9,8 @@ export async function load({ url }) {
 
 	const [category, post] = await Promise.all([categoryPromise, postPromise]);
 
-	const title = post ? post.data.title : category ? category.name : 'XIYO Hole';
+	const title = post ? post.data.title : category ? category.name : m.title();
+	const description = post ? post.data.description : m.description();
 
 	const og = post
 		? {
@@ -24,6 +26,7 @@ export async function load({ url }) {
 
 	return {
 		title,
+		description,
 		category,
 		post,
 		og
