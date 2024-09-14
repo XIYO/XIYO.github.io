@@ -7,6 +7,7 @@ export function load() {
 
 	return {
 		title: 'XIYO Hole',
+		title: m.title(),
 		og: {},
 		gitLog: [gitLog[0], gitLog.at(-1)]
 	};
