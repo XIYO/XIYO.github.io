@@ -54,7 +54,6 @@
 	overflow: scroll; /* 윈도우에서 의도적으로 스크롤바를 노출시켜 스크롤바 때문에 생기는 레이아웃의 뒤틀림 방지 */
 
 	text-wrap: pretty;
-	word-break: keep-all;
 }
 
 body {
