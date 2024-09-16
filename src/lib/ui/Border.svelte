@@ -8,7 +8,7 @@
 	 * rest?: any
 	 * }}
 	 **/
-	const { viewTransitionName, negative, id, tag = 'div', children, ...rest } = $props();
+	const { children, tag = 'div', viewTransitionName, negative, id, ...rest } = $props();
 
 	const SEPARATOR = '-';
 	const PREFIX = 'border';
