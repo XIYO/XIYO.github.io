@@ -82,6 +82,7 @@
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
+			overflow-y: auto; /* 메뉴가 너무 많아졌을때, 스크롤바 생성 */
 		}
 
 		#nav-footer {
