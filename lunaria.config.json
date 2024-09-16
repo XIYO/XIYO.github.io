@@ -1,29 +1,29 @@
 {
-  "$schema": "./node_modules/@lunariajs/core/config.schema.json",
-  "repository": {
-    "name": "XIYO/xiyo.github.io",
-    "branch": "main",
-    "hosting": "github"
-  },
-  "defaultLocale": {
-    "label": "한국어",
-    "lang": "ko-KR"
-  },
-  "locales": [
-    {
-      "label": "English",
-      "lang": "en-US"
-    },
-    {
-      "label": "日本語",
-      "lang": "ja-JP"
-    }
-  ],
-  "files": [
-    {
-      "location": "static/**/*.md",
-      "pattern": "static/@lang/@path",
-      "type": "universal"
-    }
-  ]
+	"$schema": "./node_modules/@lunariajs/core/config.schema.json",
+	"repository": {
+		"name": "XIYO/xiyo.github.io",
+		"branch": "main",
+		"hosting": "github"
+	},
+	"defaultLocale": {
+		"label": "한국어",
+		"lang": "ko-KR"
+	},
+	"locales": [
+		{
+			"label": "English",
+			"lang": "en-US"
+		},
+		{
+			"label": "日本語",
+			"lang": "ja-JP"
+		}
+	],
+	"files": [
+		{
+			"location": "static/**/*.md",
+			"pattern": "static/@lang/@path",
+			"type": "universal"
+		}
+	]
 }

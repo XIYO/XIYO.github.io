@@ -65,22 +65,21 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: blog
-          path: 'build/'  # 빌드된 파일의 경로
-
+          path: 'build/' # 빌드된 파일의 경로
 
   deploy:
     needs: build_site
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download artifact  # 아티팩트를 수동으로 다운로드하는 단계
+      - name: Download artifact # 아티팩트를 수동으로 다운로드하는 단계
         uses: actions/download-artifact@v4.1.8
         with:
-          name: blog  # 이전 단계에서 업로드한 아티팩트 이름
-          path: './build'  # 다운로드할 경로
+          name: blog # 이전 단계에서 업로드한 아티팩트 이름
+          path: './build' # 다운로드할 경로
 
-      - name: Deploy to Cloudflare Pages with Wrangler  # Wrangler 액션 사용
-        uses: cloudflare/wrangler-action@v3.7.0  # Wrangler 액션 사용
+      - name: Deploy to Cloudflare Pages with Wrangler # Wrangler 액션 사용
+        uses: cloudflare/wrangler-action@v3.7.0 # Wrangler 액션 사용
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy ./build  --project-name=blog-xiyo

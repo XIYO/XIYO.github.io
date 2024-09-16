@@ -1,6 +1,6 @@
 import Post from '$lib/post/Post.js';
-import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js'
-import { i18n } from '$lib/i18n.js'
+import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+import { i18n } from '$lib/i18n.js';
 
 const symbol = Symbol('Category initialization');
 
@@ -24,7 +24,8 @@ export default class Category {
 		Category.#categories.set(key, this);
 
 		const split = absolutePath.split('/');
-		if (availableLanguageTags.includes(split[1])) { // 언어 코드가 포함되어 있으면 제거
+		if (availableLanguageTags.includes(split[1])) {
+			// 언어 코드가 포함되어 있으면 제거
 			split.splice(1, 1); // 1번 인덱스의 요소를 제거
 		}
 

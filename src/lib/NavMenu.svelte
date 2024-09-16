@@ -19,16 +19,16 @@
 </ul>
 
 <style>
-    ul {
-        /* reset */
-        padding-inline-start: unset;
-        list-style-type: none;
+	ul {
+		/* reset */
+		padding-inline-start: unset;
+		list-style-type: none;
 
-        display: grid;
-        gap: var(--default-margin);
-    }
+		display: grid;
+		gap: var(--default-margin);
+	}
 
-    li[aria-current='page'] {
-        color: var(--color-primary);
-    }
+	li[aria-current='page'] {
+		color: var(--color-primary);
+	}
 </style>

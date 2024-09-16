@@ -25,19 +25,19 @@
 		{/if}
 	</Border>
 
-<Border id="article" viewTransitionName="posts" negative>
-	<BorderHeader title="posts" />
+	<Border id="article" viewTransitionName="posts" negative>
+		<BorderHeader title="posts" />
 
-	<ul class="padding">
-		{#each category.allPosts as post}
-			<li>
-				<article>
-					<a href={post.absolutePath}>{post.data.title}</a>
-				</article>
-			</li>
-		{/each}
-	</ul>
-</Border>
+		<ul class="padding">
+			{#each category.allPosts as post}
+				<li>
+					<article>
+						<a href={post.absolutePath}>{post.data.title}</a>
+					</article>
+				</li>
+			{/each}
+		</ul>
+	</Border>
 </div>
 
 <style>
@@ -46,10 +46,10 @@
 		gap: var(--default-margin);
 
 		@container main ( 768px <= inline-size) {
-		 grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 			& > :global(*) {
-			  block-size: fit-content;
-		  }
+				block-size: fit-content;
+			}
 		}
 	}
 

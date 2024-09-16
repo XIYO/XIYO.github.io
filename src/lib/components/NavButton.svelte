@@ -15,7 +15,6 @@
 		border: unset;
 		background-color: unset;
 
-
 		&::after {
 			content: '⛱️';
 			display: inline-block;

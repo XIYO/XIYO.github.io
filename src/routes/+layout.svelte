@@ -80,7 +80,7 @@
 		<Footer gitLog={$page.data.gitLog} />
 	</div>
 </ParaglideJS>
-	<Nav />
+<Nav />
 
 <style>
 	#container-content {
@@ -89,7 +89,7 @@
 	}
 
 	main {
-			container: main /	inline-size;
+		container: main / inline-size;
 	}
 
 	/**
