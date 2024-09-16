@@ -173,11 +173,11 @@ img {
 }
 
 figure {
-	display: inline-block;
-	margin: unset;
+	margin-inline: unset;
 	border-radius: var(--inner-border-radius);
 	background-color: var(--color-primary);
 	max-inline-size: 100%;
+	inline-size: fit-content;
 
 	figcaption {
 		padding-inline: var(--default-padding);
