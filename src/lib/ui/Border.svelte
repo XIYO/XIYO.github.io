@@ -1,49 +1,42 @@
 <script>
 	/** @type {{
 	 * children: import('svelte').Snippet,
-	 * viewTransitionName: string,
-	 * borderOuterViewTransitionClass?: string,
-	 * borderInnerViewTransitionClass?: string,
-	 * borderContentViewTransitionClass?: string,
+	 * viewTransitionName?: string,
 	 * negative?: boolean,
 	 * id?: string,
 	 * tag?: string,
 	 * rest?: any
 	 * }}
 	 **/
-	const {
-		viewTransitionName,
-		borderOuterViewTransitionClass = 'border-outer',
-		borderInnerViewTransitionClass = 'border-inner',
-		borderContentViewTransitionClass = 'border-content',
-		negative = false,
-		id,
-		tag = 'div',
-		children,
-		...rest
-	} = $props();
+	const { viewTransitionName, negative, id, tag = 'div', children, ...rest } = $props();
+
+	const SEPARATOR = '-';
+	const PREFIX = 'border';
+	const BORDER_OUTER = [PREFIX, 'outer'].join(SEPARATOR);
+	const BORDER_INNER = [PREFIX, 'inner'].join(SEPARATOR);
+	const BORDER_CONTENT = [PREFIX, 'content'].join(SEPARATOR);
 </script>
 
 <svelte:element
 	this={tag}
-	id={id ? `border-outer-${id}` : undefined}
-	class="border-outer"
-	style:view-transition-name={`border-outer-${viewTransitionName}`}
-	style:view-transition-class={borderOuterViewTransitionClass}
+	id={id ? [BORDER_OUTER, id].join(SEPARATOR) : undefined}
+	class:border-outer={true}
+	style:view-transition-name={viewTransitionName ? [BORDER_OUTER, viewTransitionName].join(SEPARATOR) : undefined}
+	style:view-transition-class={BORDER_OUTER}
 	{...rest}
 >
 	<div
-		id={id ? `border-inner-${id}` : undefined}
-		class="border-inner"
+		id={id ? [BORDER_INNER, id].join(SEPARATOR) : undefined}
+		class:border-inner={true}
 		class:negative
-		style:view-transition-name={`border-inner-${viewTransitionName}`}
-		style:view-transition-class={borderInnerViewTransitionClass}
+		style:view-transition-name={viewTransitionName ? [BORDER_INNER, viewTransitionName].join(SEPARATOR) : undefined}
+		style:view-transition-class={BORDER_INNER}
 	>
 		<div
-			id={id ? `border-content-${id}` : undefined}
-			class="border-content"
-			style:view-transition-name={`border-content-${viewTransitionName}`}
-			style:view-transition-class={borderContentViewTransitionClass}
+			id={id ? [BORDER_CONTENT, id].join(SEPARATOR) : undefined}
+			class:border-content={true}
+			style:view-transition-name={viewTransitionName ? [BORDER_CONTENT, viewTransitionName].join(SEPARATOR) : undefined}
+			style:view-transition-class={BORDER_CONTENT}
 		>
 			{@render children()}
 		</div>
