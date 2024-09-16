@@ -2,10 +2,7 @@
 	import Border from '$lib/ui/Border.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
 	import * as m from '$lib/paraglide/messages.js';
-
-	import { i18n } from '$lib/i18n.js';
 	import LangSwitch from '$lib/LangSwitch.svelte';
-	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import NavMenu from '$lib/NavMenu.svelte';
 </script>
 
@@ -16,10 +13,8 @@
 	</div>
 
 	<div id="nav-main" class="padding content negative">
-		<ParaglideJS {i18n}>
-			<NavMenu />
-			<LangSwitch />
-		</ParaglideJS>
+		<NavMenu />
+		<LangSwitch />
 	</div>
 
 	<div id="nav-footer" class="padding">
