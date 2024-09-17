@@ -1,14 +1,17 @@
 <script>
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { i18n } from '$lib/i18n';
-
-	import '$lib/stylesheet/app.css';
-	import '$lib/stylesheet/view-transition.css';
-	import Nav from '$lib/components/Nav.svelte';
 	import { onNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
+
+	// components
+	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/Header.svelte';
-	import { page } from '$app/stores';
+
+	// styles
+	import '$lib/stylesheet/app.css';
+	import '$lib/stylesheet/view-transition.css';
 	import 'rehype-callouts/theme/github';
 
 	const { children } = $props();
@@ -79,7 +82,7 @@
 		</main>
 		<Footer gitLog={$page.data.gitLog} />
 	</div>
-  <Nav />
+	<Nav />
 </ParaglideJS>
 
 <style>
