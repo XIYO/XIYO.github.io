@@ -4,13 +4,17 @@
 	import { page } from '$app/stores';
 </script>
 
+{#snippet switcher({href, lang})}
+	<li>
+		<a {href} hreflang={lang}>
+			{lang}
+		</a>
+	</li>
+{/snippet}
+
 <ul>
 	{#each availableLanguageTags as lang}
-		<li>
-			<a href={i18n.route($page.url.pathname)} hreflang={lang}>
-				{lang}
-			</a>
-		</li>
+		{@render switcher({href: i18n.route($page.url.pathname), lang})}
 	{/each}
 </ul>
 
