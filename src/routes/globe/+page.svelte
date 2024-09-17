@@ -17,7 +17,9 @@
 <style>
 	.gloves {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		column-gap: var(--default-margin);
+		row-gap: calc(var(--default-margin) * 2);
 
 		& > .glove {
 			text-decoration: none;
@@ -28,10 +30,6 @@
 				aspect-ratio: 1;
 				inline-size: 100%;
 				block-size: auto;
-			}
-
-			h2 {
-				margin-block: 0.25rem;
 			}
 		}
 	}
