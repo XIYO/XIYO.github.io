@@ -4,6 +4,8 @@
 	"description": "アーカイブ＆ラボ＆遊び場＆ブログ",
 	"welcome": "no js、no cssのための！ターミナルブラウザまで考えた…svelteで自分で作ったブログ！です。 （JSが有効になっていると反応性が向上します！）",
 	"github": "伊予の旗ハブ",
+	"globe": "グローブ",
+	"globeDescription": "プロジェクトストアです。手袋は手袋のような、作業を始めるための準備です。",
 	"jjakakImgAlt": "JJaKak タイマー画像",
 	"jjakakDescription": "シンプルなタイマー。 PWAで実装で実装されており、ブラウザからアプリに直接インストールが可能です。",
 	"subCategoryEmpty": "サブカテゴリはありません。"

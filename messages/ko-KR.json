@@ -5,7 +5,7 @@
 	"welcome": "no js, no css 를 위한! 터미널 브라우저까지 고려한... svelte 로 직접 만든 블로그! 입니다. (JS 가 활성화 되어 있으면 반응성이 향상됩니다!)",
 	"github": "이요의 깃허브",
 	"globe": "글러브",
-	"globeDescription": "프로젝트 저장소 입니다. 글러브는 저의 장갑 같은 작업 시작을 위한 준비물 입니다.",
+	"globeDescription": "프로젝트 저장소 입니다. 글러브는 장갑 같은, 작업 시작을 위한 준비물 입니다.",
 	"jjakakImgAlt": "째깍 타이머 이미지",
 	"jjakakDescription": "심플 타이머. PWA로 구현로 구현되어 있어 브라우저에서 앱으로 바로 설치가 가능합니다.",
 	"subCategoryEmpty": "하위 카테고리가 없습니다."
