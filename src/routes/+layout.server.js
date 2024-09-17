@@ -1,4 +1,4 @@
-import { getAllGitLog, getGitLogSync } from '$lib/plugin/gitLog.js';
+import { getAllGitLog } from '$lib/plugin/gitLog.js';
 import * as m from '$lib/paraglide/messages.js';
 
 export const prerender = true;
