@@ -45,7 +45,7 @@
 		display: grid;
 		gap: var(--default-margin);
 
-		@container main ( 768px <= inline-size) {
+		@media (768px <= width) {
 			grid-template-columns: repeat(2, 1fr);
 			& > :global(*) {
 				block-size: fit-content;
