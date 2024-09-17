@@ -3,7 +3,9 @@ import * as m from '$lib/paraglide/messages.js';
 
 export const prerender = true;
 
-export function load() {
+export function load({ depends }) {
+	depends('language:current');
+
 	const gitLog = getAllGitLog();
 
 	return {

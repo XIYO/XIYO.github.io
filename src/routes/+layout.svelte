@@ -1,8 +1,9 @@
 <script>
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { i18n } from '$lib/i18n';
-	import { onNavigate } from '$app/navigation';
+	import { invalidate, onNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { onSetLanguageTag } from '$lib/paraglide/runtime.js';
 
 	// components
 	import Nav from '$lib/components/Nav.svelte';
@@ -15,6 +16,10 @@
 	import 'rehype-callouts/theme/github';
 
 	const { children } = $props();
+
+	onSetLanguageTag(() => {
+		invalidate('language:current');
+	});
 
 	onNavigate((navigation) => {
 		if (
