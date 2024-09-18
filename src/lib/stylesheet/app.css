@@ -255,6 +255,7 @@ pre {
 				margin-inline-end: var(--default-margin);
 			}
 
+			/* transformerNotationDiff */
 			&.diff {
 				&.remove {
 					background-color: light-dark(hsl(0, 100%, 90%), hsl(0, 100%, 25%));
@@ -275,6 +276,21 @@ pre {
 						padding-inline-end: unset;
 					}
 				}
+			}
+		}
+	}
+
+	/* transformerNotationFocus */
+	&.has-focused {
+		 &:not(:hover) .line:not(.focused) {
+			filter: blur(.1rem);
+			opacity: .4;
+		}
+
+		@media (prefers-reduced-motion: no-preference) {
+			& .line {
+				transition-property: filter, opacity;
+				transition-duration: var(--default-animation-duration);
 			}
 		}
 	}
