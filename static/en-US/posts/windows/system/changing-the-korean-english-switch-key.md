@@ -33,14 +33,14 @@ In this case, I decided to use <kbd>win</kbd> + <kbd>space</kbd> to toggle betwe
 1. Install [PowerToys](https://apps.microsoft.com/store/detail/XP89DCGQ3K6VLD?ocid=pdpshare) from the Microsoft Store.
 2. Launch the PowerToys app and click on the "Keyboard Manager" button in the menu area.
 3. Click the "Remap Shortcut" button in the main area.
-   ![Remapping Shortcut in Keyboard Manager](img_1.png)
+   ![Remapping Shortcut in Keyboard Manager](/static/resources/changing-the-korean-english-switch-key-20240918110239147.png)
 4. In the "Remap Shortcut" window, map the keys.
    1. In the "Shortcut" section, click the ✏️ button next to "Shortcut" and enter the combination keys.
-      ![Using Windows Key and Space as Korean/English Toggle](img_2.png)
+      ![Using Windows Key and Space as Korean/English Toggle](/static/resources/changing-the-korean-english-switch-key-20240918110408909.png)
    2. In the "Target" section, click the ✏️ button next to "Shortcut" and enter the "Korean/English" key.
 5. Click the "Save" button in the "Remap Shortcut" window.
 6. Click the "Apply" button in the "Keyboard Manager" window.
-   ![Korean/English Key Added](img_3.png)
+   ![Korean/English Key Added](/static/resources/changing-the-korean-english-switch-key-20240918110510904.png)
 
 Now, you can toggle between Korean and English using two different methods.
 

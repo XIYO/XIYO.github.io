@@ -8,7 +8,7 @@ The command `winget -v` works fine, but the `winget install` command does not ex
 
 You need to update the App Installer.
 
-![Downloading updates for all apps from the App Store](img.png)
+![Downloading updates for all apps from the App Store](/static/resources/update-winget-20240918110056451.png)
 
 0. Open the Microsoft Store.
 1. Click on "Download Updates" in the Library.

@@ -23,7 +23,7 @@ asuswrt-merlin 펌웨어에서 커스텀 도메인을 연결하는 방법을 정
 
 [DDNS 설정](https://router.xiyo.dev/Advanced_ASUSDDNS_Content.asp)에서 Server를 Custom으로 변경합니다.
 
-![DDNS 옵션 변경](img_4.png)
+![DDNS 옵션 변경](/static/resources/custom-ddns-20240918105845255.png)
 
 WAN 카테고리의 DDNS 설정에서 Server 옵션을 Custom으로 변경합니다.
 
@@ -38,7 +38,7 @@ WAN 카테고리의 DDNS 설정에서 Server 옵션을 Custom으로 변경합니
 
 발급 후 결과 :
 
-![토큰 발급 결과](img_3.png)
+![토큰 발급 결과](/static/resources/custom-ddns-20240918105908541.png)
 
 ## SETUP INADYN
 

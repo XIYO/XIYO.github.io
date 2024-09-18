@@ -47,7 +47,7 @@
 
 깃허브는 웹에서 브랜치 이름을 변경하면 위 과정을 거치지 않아도 됩니다.
 
-![img.png](img.png)
+![브랜치 이름을 변경하는 메뉴 위치](/static/resources/change-branch-name-20240918104226703.png)
 
 1. https://github.com/소유자-이름/브랜치-이름/branches 페이지로 이동합니다.
 2. 햄버거 메뉴를 클릭하고 `Rename branch`를 클릭합니다.

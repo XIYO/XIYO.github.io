@@ -10,8 +10,8 @@ GitHub Actionsを使用して自動デプロイを行うために、いくつか
 
 ## 解決策
 
-![検索を開く](img.png)  
-![保護されたブランチを修正](img_1.png)
+!["search everywhere" を開く](/static/resources/enable-force-push-20240918104825841.png)
+!["protected branch" フィールドを修正](/static/resources/enable-force-push-20240918104833418.png)
 
 - 方法 0. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> の組み合わせショートカットを入力して `Search Everywhere` ウィンドウを開きます。  
 0. `Search Everywhere` ウィンドウで「Protected branches:」と入力し、一致する項目をクリックします。  

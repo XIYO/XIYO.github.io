@@ -46,7 +46,7 @@ We will change the branch name from "master" to "main."
 
 On GitHub, you can rename the branch directly on the web without going through the above steps.
 
-![img.png](img.png)
+![Menu location for renaming a branch](/static/resources/change-branch-name-20240918104226703.png)
 
 1. Go to the page at <https://github.com/owner-name/branch-name/branches>.
 2. Click on the hamburger menu and select `Rename branch`.
