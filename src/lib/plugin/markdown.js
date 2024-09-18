@@ -8,6 +8,7 @@ import rehypeStringify from 'rehype-stringify';
 import { visit } from 'unist-util-visit';
 import sizeOf from 'image-size';
 import { join } from 'node:path';
+import { transformerNotationDiff } from '@shikijs/transformers';
 
 export default async function markdownAsync({ markdown }) {
 	return (
@@ -58,6 +59,7 @@ const rehypeShikiOptions = {
 		light: 'solarized-light',
 		dark: 'poimandres'
 	},
+	transformers: [transformerNotationDiff()],
 	parseMetaString
 };
 
