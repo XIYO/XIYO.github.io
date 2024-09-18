@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "static/posts/language/javascript/using-generators-like-regular-variables.md",
+                "file": "static/posts/dlog/svelte/apply-paraglidjs.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "static/posts/language/javascript/using-generators-like-regular-variables.md",
+                "file": "static/posts/dlog/svelte/apply-paraglidjs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "static/posts/language/javascript/using-generators-like-regular-variables.md",
+                "file": "static/posts/dlog/svelte/apply-paraglidjs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "static/posts/language/javascript/using-generators-like-regular-variables.md"
+                "file": "static/posts/dlog/svelte/apply-paraglidjs.md"
               }
             }
           }
@@ -149,37 +149,45 @@
   },
   "active": "23f0b5cb87fbd82b",
   "lastOpenFiles": [
-    "src/lib/Header.svelte~",
-    "src/lib/components/NavButton.svelte~",
     "src/lib/stylesheet/app.css~",
-    "src/lib/components/Nav.svelte~",
-    "vite.config.js.timestamp-1724366447396-f5700b9b6ad6b.mjs",
-    "static/posts/language/javascript/using-generators-like-regular-variables.md~",
-    "static/posts/dlog/deploying-to-cloudflare-pages.md~",
-    "vite.config.js.timestamp-1724362554635-161a9e173e66d.mjs",
-    "vite.config.js.timestamp-1724359410751-586de71483a1d.mjs",
-    "src/lib/plugin/vitePluginXiyo.js~",
-    "vite.config.js.timestamp-1724359227298-0f54f2bee5801.mjs",
+    "src/lib/plugin/markdown.js~",
+    "static/resources/apply-paraglidjs-20240918161625634.png",
+    "static/resources/apply-paraglidjs-20240918153234469.png",
+    "static/resources/apply-paraglidjs-20240918152250222.png",
+    "static/resources/apply-paraglidjs-20240918152148811.png",
+    "static/resources/apply-paraglidjs-20240918151659832.png",
+    "static/resources/apply-paraglidjs-20240918151354500.png",
+    "package.json.2805611707",
+    "pnpm-lock.yaml.2126558680",
+    "_tmp_12708_253a3b877b5d138ef02562b56fe60b19",
+    "_tmp_25460_3abe1dc4ff35355b283d0557b07611f2",
+    "vite.config.js.timestamp-1726633042684-9eaef577477bb.mjs",
+    "package.json.3641133377",
+    "pnpm-lock.yaml.2050798579",
+    "_tmp_5296_29c8752dd99a634e0e639c693f3fd913",
+    "static/posts/windows/system/changing-the-korean-english-switch-key.md",
+    "static/posts/dlog/svelte/apply-paraglidjs.md~",
+    "static/posts/windows/system/changing-the-korean-english-switch-key-20240918110510904.png",
+    "static/posts/windows/system/changing-the-korean-english-switch-key-20240918110408909.png",
+    "static/posts/windows/system/changing-the-korean-english-switch-key-20240918110239147.png",
+    "static/posts/windows/system/update-winget-20240918110056451.png",
+    "static/posts/windows/system/install-ssh-server.md",
+    "static/posts/windows/system/update-winget.md",
+    "static/posts/xnix/asuswrt/merlin/custom-ddns.md",
+    "static/posts/windows/intellij/enable-force-push.md",
+    "static/posts/windows/intellij/thymeleaf-static-import.md",
+    "static/posts/package/git/change-branch-name.md",
+    "static/posts/dlog/svelte/load.md",
+    "static/posts/language/javascript/using-generators-like-regular-variables.md",
     "build/posts/language/javascript/using-generators-like-regular-variables.md",
     "static/posts/dlog/svelte/removed-shiki.md",
-    "static/posts/language/javascript/using-generators-like-regular-variables.md",
     "static/posts/dlog/svelte/new-rune-svelte@5.0.0-next-229.md",
     "static/posts/dlog/svelte/using-popover-api.md",
     "static/posts/dlog/svelte/make-vite-plugin-markdown.md",
     "static/posts/dlog/deploying-to-cloudflare-pages.md",
     "static/posts/dlog/svelte/usging-cache-on-github-action.md",
     "static/posts/dlog/svelte/using-cache-on-github-action.md",
-    "static/resources/usging-cache-on-github-action-20240816000251502.png",
-    "static/resources/usging-cache-on-github-action-20240816000140052.png",
-    "static/resources/usging-cache-on-github-action-20240815233139668.png",
-    "static/resources/usging-cache-on-github-action-20240815232537900.png",
-    "static/resources/usging-cache-on-github-action-20240815232353052.png",
-    "static/resources/usging-cache-on-github-action-20240815232157267.png",
-    "static/resources/usging-cache-on-github-action-20240815232057698.png",
-    "static/resources/record-2024-08-11-201239.gif",
-    "static/resources/Pasted image 20240815231751.png",
     "static/posts/dlog/svelte/pojo.md",
-    "static/about.md",
-    "static/record-2024-08-11-201239-ezgif.com-video-to-gif-converter.gif"
+    "static/about.md"
   ]
 }
