@@ -23,6 +23,7 @@ const config = {
 		prerender: {
 			origin
 		},
+		inlineStyleThreshold: Infinity,
 		version: {
 			name: execSync('git rev-parse HEAD').toString().trim()
 		}

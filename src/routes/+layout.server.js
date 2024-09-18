@@ -1,6 +1,7 @@
 import { getAllGitLog } from '$lib/plugin/gitLog.js';
 
 export const prerender = true;
+export const csr = false;
 
 export function load() {
 	const gitLog = getAllGitLog();
