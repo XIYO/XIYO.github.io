@@ -219,8 +219,53 @@ code {
 }
 
 /* shiki custom css */
+pre.shiki {
+	--shiki-foreground: light-dark(#657B83, #a6accd);
+	--shiki-background: light-dark(#FDF6E3, #1b1e28);
+	--shiki-token-constant: light-dark(#D33682, #5DE4c7);
+	--shiki-token-string: light-dark(#2AA198, #5DE4c7);
+	--shiki-token-comment: light-dark(#93A1A1, #767c9dB0);
+	--shiki-token-keyword: light-dark(#859900, #a6accd);
+	--shiki-token-parameter: light-dark(#657B83, #e4f0fb);
+	--shiki-token-function: light-dark(#268BD2, #ADD7FF);
+	--shiki-token-string-expression: light-dark(#DC322F, #5fb3a1);
+	--shiki-token-punctuation: light-dark(#859900, #a6accd);
+	--shiki-token-link: light-dark(#268BD2, #ADD7FF);
 
-pre {
+	/* ANSI colors */
+	--shiki-ansi-black: light-dark(#073642, #1b1e28);
+	--shiki-ansi-black-dim: light-dark(#07364280, #1b1e2880);
+	--shiki-ansi-red: light-dark(#dc322f, #d0679d);
+	--shiki-ansi-red-dim: light-dark(#dc322f80, #d0679d80);
+	--shiki-ansi-green: light-dark(#859900, #5DE4c7);
+	--shiki-ansi-green-dim: light-dark(#85990080, #5DE4c780);
+	--shiki-ansi-yellow: light-dark(#b58900, #fffac2);
+	--shiki-ansi-yellow-dim: light-dark(#b5890080, #fffac280);
+	--shiki-ansi-blue: light-dark(#268bd2, #89ddff);
+	--shiki-ansi-blue-dim: light-dark(#268bd280, #89ddff80);
+	--shiki-ansi-magenta: light-dark(#d33682, #f087bd);
+	--shiki-ansi-magenta-dim: light-dark(#d3368280, #f087bd80);
+	--shiki-ansi-cyan: light-dark(#2aa198, #89ddff);
+	--shiki-ansi-cyan-dim: light-dark(#2aa19880, #89ddff80);
+	--shiki-ansi-white: light-dark(#eee8d5, #ffffff);
+	--shiki-ansi-white-dim: light-dark(#eee8d580, #ffffff80);
+	--shiki-ansi-bright-black: light-dark(#002b36, #a6accd);
+	--shiki-ansi-bright-black-dim: light-dark(#002b3680, #a6accd80);
+	--shiki-ansi-bright-red: light-dark(#cb4b16, #d0679d);
+	--shiki-ansi-bright-red-dim: light-dark(#cb4b1680, #d0679d80);
+	--shiki-ansi-bright-green: light-dark(#586e75, #5DE4c7);
+	--shiki-ansi-bright-green-dim: light-dark(#586e7580, #5DE4c780);
+	--shiki-ansi-bright-yellow: light-dark(#657b83, #fffac2);
+	--shiki-ansi-bright-yellow-dim: light-dark(#657b8380, #fffac280);
+	--shiki-ansi-bright-blue: light-dark(#839496, #ADD7FF);
+	--shiki-ansi-bright-blue-dim: light-dark(#83949680, #ADD7FF80);
+	--shiki-ansi-bright-magenta: light-dark(#6c71c4, #f087bd);
+	--shiki-ansi-bright-magenta-dim: light-dark(#6c71c480, #f087bd80);
+	--shiki-ansi-bright-cyan: light-dark(#93a1a1, #ADD7FF);
+	--shiki-ansi-bright-cyan-dim: light-dark(#93a1a180, #ADD7FF80);
+	--shiki-ansi-bright-white: light-dark(#fdf6e3, #ffffff);
+	--shiki-ansi-bright-white-dim: light-dark(#fdf6e380, #ffffff80);
+
 	&:has(code) {
 		/* reset */
 		margin-block: unset;
@@ -314,21 +359,6 @@ pre {
 			color: var(--color-default-black);
 			font-weight: bold;
 		}
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	/* 백그라운드는 .shiki 클래스만 적용 */
-	.shiki {
-		background-color: var(--shiki-dark-bg) !important;
-	}
-	.shiki,
-	.shiki span {
-		color: var(--shiki-dark) !important;
-		/* Optional, if you also want font styles */
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-		text-decoration: var(--shiki-dark-text-decoration) !important;
 	}
 }
 

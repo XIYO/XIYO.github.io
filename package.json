@@ -38,6 +38,7 @@
 		"remark-figure-caption": "^1.0.2",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.0",
+		"shiki": "^1.17.7",
 		"super-sitemap": "^0.15.1",
 		"svelte": "5.0.0-next.250",
 		"svelte-check": "^3.8.6",

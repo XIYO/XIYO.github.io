@@ -9,6 +9,7 @@ import { visit } from 'unist-util-visit';
 import sizeOf from 'image-size';
 import { join } from 'node:path';
 import { transformerNotationDiff, transformerNotationFocus } from '@shikijs/transformers';
+import { createCssVariablesTheme } from 'shiki/core';
 
 export default async function markdownAsync({ markdown }) {
 	return (
@@ -51,14 +52,23 @@ const parseMetaString = (meta) => {
 	return map;
 };
 
+// 변수형 테마 생성
+const theme = createCssVariablesTheme({
+	name: 'css-variables',
+	// variablePrefix: '--shiki-',
+	variableDefaults: {},
+	fontStyle: true
+});
+
 /**
  * @type {import('@shikijs/rehype').RehypeShikiOptions}
  */
 const rehypeShikiOptions = {
-	themes: {
-		light: 'solarized-light',
-		dark: 'poimandres'
-	},
+	theme,
+	// themes: {
+	// 	light: 'solarized-light',
+	// 	dark: 'poimandres'
+	// },
 	transformers: [transformerNotationDiff(), transformerNotationFocus()],
 	parseMetaString
 };
