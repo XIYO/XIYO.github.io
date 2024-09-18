@@ -10,7 +10,8 @@ on:
         description: Enable, if you want to import all TODOs. Runs on checked out branch! Only use if you're sure what you are doing.
   push:
     branches:
-      - main
+      - blog
+      - amp
     paths-ignore:
       - /.idea/**
 
@@ -82,4 +83,4 @@ jobs:
         uses: cloudflare/wrangler-action@v3.7.0 # Wrangler 액션 사용
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy ./build  --project-name=blog-xiyo
+          command: pages deploy ./build --project-name=${{ github.ref_name }} # 브랜치 이름을 프로젝트 이름으로 사용
