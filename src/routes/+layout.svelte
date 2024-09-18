@@ -14,8 +14,8 @@
 	import '$lib/stylesheet/app.css';
 	import '$lib/stylesheet/view-transition.css';
 	import 'rehype-callouts/theme/github';
-	import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
-	import 'pretendard-jp/dist/web/variable/pretendardvariable-jp-dynamic-subset.css';
+	import 'pretendard/dist/web/variable/pretendardvariable.css';
+	import 'pretendard-jp/dist/web/variable/pretendardvariable-jp.css';
 	import '@kfonts/neodgm-code/index.css';
 
 	const { children } = $props();
