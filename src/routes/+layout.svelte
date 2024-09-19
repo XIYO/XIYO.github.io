@@ -12,7 +12,7 @@
 
 	// styles
 	import '$lib/stylesheet/app.css';
-	import '$lib/stylesheet/view-transition.css';
+	// import '$lib/stylesheet/view-transition.css'; // amp 모드는 필요 없음
 	import 'rehype-callouts/theme/github';
 
 	const { children } = $props();
