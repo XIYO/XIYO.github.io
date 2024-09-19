@@ -1,3 +1,26 @@
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/pretendard/web/variable/woff2/PretendardVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Pretendard JP Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/pretendard-jp/web/variable/woff2/PretendardJPVariable.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Neo둥근모 Code';
+	src: local('Neo둥근모 Code'), local('NeoDunggeunmo Code'), url(/fonts/neo-dunggeunmo/neodgm_code.woff2) format('woff2'), url(/fonts/neo-dunggeunmo/neodgm_code.woff) format('woff');
+	font-display: swap;
+	font-weight: 400;
+}
+
 :root {
 	color-scheme: light dark;
 
