@@ -2,11 +2,13 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"title": "XIYO's Hole",
 	"description": "Archives and Labs and Playgrounds and Blogs",
-	"welcome": "For those who prefer no JS and no CSS! A blog built entirely with Svelte, even considering terminal browsers! (Responsiveness is enhanced if JS is enabled!)",
+	"welcome": "For no js, no css!<br/> A blog made directly with Svelte, taking even the terminal browser into consideration!<br/> Responsiveness is improved when JS is enabled!",
 	"github": "XIYO's GitHub",
 	"globe": "globe",
 	"globeDescription": "This is the project repository. Gloves are like gloves, preparations for starting work.",
 	"jjakakImgAlt": "JJaKak timer image",
 	"jjakakDescription": "Simple timer. Implemented as PWA, so you can install it as an app directly from your browser.",
-	"subCategoryEmpty": "There are no subcategories."
+	"subCategoryEmpty": "There are no subcategories.",
+	"terminalBrowsing": "Screen accessed from terminal browser",
+	"terminal": "Terminal"
 }
