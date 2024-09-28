@@ -177,12 +177,15 @@ figure {
 		padding-inline: var(--default-padding);
 		padding-block-end: var(--default-border-width);
 
-		p {
-			/* reset */
-			margin-block: unset;
+		font-size: 0.75rem;
+		text-align: end;
 
-			font-size: 0.75rem;
-			text-align: end;
+		:first-child {
+			margin-block-start: 0;
+		}
+
+		:last-child {
+			margin-block-end: 0;
 		}
 	}
 
