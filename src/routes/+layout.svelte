@@ -86,6 +86,9 @@
 	{#if $page.data.og.tags}
 		<meta property="article:tag" content={$page.data.og.tags} />
 	{/if}
+	{#if $page.data.og.keywords}
+		<meta name="keywords" content={$page.data.og.keywords} />
+	{/if}
 </svelte:head>
 
 <ParaglideJS {i18n}>

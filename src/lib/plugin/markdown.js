@@ -10,6 +10,8 @@ import sizeOf from 'image-size';
 import { join } from 'node:path';
 import { transformerNotationDiff, transformerNotationFocus } from '@shikijs/transformers';
 import { createCssVariablesTheme } from 'shiki/core';
+import remarkFrontmatter from 'remark-frontmatter';
+import matter from 'gray-matter'; // gray-matter로 프론트매터 파싱
 
 export default async function markdownAsync({ markdown }) {
 	return (
@@ -18,6 +20,20 @@ export default async function markdownAsync({ markdown }) {
 			.use(remarkParse, { allowDangerousHtml: true })
 			.use(remarkFigureCaption)
 			.use(ExtractTitleAndPathRemove)
+			.use(remarkFrontmatter, ['yaml', 'toml']) // 프론트매터 인식
+			.use(() => (tree, file) => {
+				// gray-matter로 프론트매터 파싱
+				const { data: frontmatter, content } = matter(String(file));
+
+				// 파싱된 프론트매터를 메타데이터로 추가
+				file.data = {
+					...file.data,
+					...frontmatter
+				};
+
+				// 파일 내용을 업데이트 (프론트매터 제거 후 본문만 남김)
+				file.contents = content;
+			})
 
 			// rehype
 			.use(remarkRehype, { allowDangerousHtml: true })
