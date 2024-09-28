@@ -11,7 +11,7 @@
 		<figure>
 		  <enhanced:img src={terminalBrowsing} alt={m.terminalBrowsing()} data-title={m.terminal()}/>
 			<figcaption>
-				터미널 브라우저에서 실행한 화면
+				터미널에서 w3m을 이용하여 접속하였습니다.
 			</figcaption>
 		</figure>
 	</div>
