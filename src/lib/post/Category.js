@@ -1,5 +1,5 @@
 import Post from '$lib/post/Post.js';
-import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+import { availableLanguageTags } from '$lib/paraglide/runtime.js';
 import { i18n } from '$lib/i18n.js';
 
 export default class Category {
