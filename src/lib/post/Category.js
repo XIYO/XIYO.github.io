@@ -2,11 +2,9 @@ import Post from '$lib/post/Post.js';
 import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 import { i18n } from '$lib/i18n.js';
 
-const symbol = Symbol('Category initialization');
-
 export default class Category {
 	static #categories = new Map();
-	static #root = new Category(''); // 순서 중요. 모든 static 필드가 초기화 된 후 초기화 되어야 함
+	static #root;
 	/** @type {string} */
 	#absolutePath;
 	/** @type {Map<string, Category>} */
@@ -14,6 +12,21 @@ export default class Category {
 	/** @type {Map<string, Post>} */
 	#posts = new Map();
 	#serialized;
+
+	static {
+		Category.#root = new Category(''); // 정적 필드 초기화
+
+		// 기존의 Category[symbol]()에서 하던 초기화 작업
+		const markdowns = import.meta.glob('/static/**/*.md');
+
+		Object.entries(markdowns).forEach(([path, markdownAsync]) => {
+			let absolutePath = path
+				.replace(/^\/static/, '') // 스태틱 경로 제거
+				.replace(/\.md$/, ''); // 확장자 제거
+
+			this.#initCategories({ absolutePath, markdownAsync });
+		});
+	}
 
 	/**
 	 * 카테고리 생성자
@@ -99,18 +112,6 @@ export default class Category {
 		return category;
 	}
 
-	static [symbol]() {
-		const markdowns = import.meta.glob('/static/**/*.md');
-
-		Object.entries(markdowns).forEach(([path, markdownAsync]) => {
-			let absolutePath = path
-				.replace(/^\/static/, '') // 스태틱 경로 제거
-				.replace(/\.md$/, ''); // 확장자 제거
-
-			this.#initCategories({ absolutePath, markdownAsync });
-		});
-	}
-
 	static #initCategories(
 		{ absolutePath, markdownAsync },
 		{ category = this.#root, index = 0 } = {}
@@ -174,5 +175,3 @@ export default class Category {
 		});
 	}
 }
-
-Category[symbol]();
