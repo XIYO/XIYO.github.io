@@ -14,7 +14,7 @@ export default class Category {
 	#serialized;
 
 	static {
-		Category.#root = new Category(''); // 정적 필드 초기화
+		this.#root = new Category(''); // 정적 필드 초기화
 
 		// 기존의 Category[symbol]()에서 하던 초기화 작업
 		const markdowns = import.meta.glob('/static/**/*.md');
