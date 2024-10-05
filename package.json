@@ -35,7 +35,7 @@
 		"prettier-plugin-svelte": "^3.2.7",
 		"rehype-callouts": "^1.0.3",
 		"rehype-stringify": "^10.0.1",
-		"remark-figure-caption": "^1.0.2",
+		"remark-figure-caption": "^1.0.6",
 		"remark-frontmatter": "^5.0.0",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.1",
