@@ -1,385 +1,388 @@
 :root {
-	color-scheme: light dark;
+    color-scheme: light dark;
 
-	/* color */
-	--color-default-black: light-dark(hsl(200, 4%, 16%), hsl(42, 66%, 93%));
-	--color-default-white: light-dark(hsl(42, 66%, 93%), hsl(200, 4%, 16%));
-	--color-primary: hsl(176, 89%, 37%);
-	--color-primary-sub: hsl(176, 89%, 27%);
+    /* color */
+    --color-default-black: light-dark(hsl(200, 4%, 16%), hsl(42, 66%, 93%));
+    --color-default-white: light-dark(hsl(42, 66%, 93%), hsl(200, 4%, 16%));
+    --color-primary: hsl(176, 89%, 37%);
+    --color-primary-sub: hsl(176, 89%, 27%);
 
-	/* margin, border */
-	--default-margin: 0.5rem;
-	--default-border-width: 0.25rem;
-	--default-padding: 1rem;
-	--inner-border-radius: 1rem;
-	--outer-border-radius: calc(var(--inner-border-radius) + var(--default-border-width));
+    /* margin, border */
+    --default-margin: 0.5rem;
+    --default-border-width: 0.25rem;
+    --default-padding: 1rem;
+    --inner-border-radius: 1rem;
+    --outer-border-radius: calc(var(--inner-border-radius) + var(--default-border-width));
 
-	/* size */
-	--scroll-bar-size: 0.25rem;
-	--min-inline-size: 320px;
-	--min-block-size: 375px; /* 아이폰 SE 3 사이즈 */
-	--nav-min-inline-size: 10rem;
-	--nav-min-block-size: calc(var(--min-block-size) - (var(--default-margin) * 2));
+    /* size */
+    --scroll-bar-size: 0.25rem;
+    --min-inline-size: 320px;
+    --min-block-size: 375px; /* 아이폰 SE 3 사이즈 */
+    --nav-min-inline-size: 10rem;
+    --nav-min-block-size: calc(var(--min-block-size) - (var(--default-margin) * 2));
 
-	--ratio-three-quarters-of-three-quarter: 0.875;
-	--ratio-three-quarter: 0.75;
-	--ratio-half: 0.5;
-	--ratio-quarter: 0.25;
-	--ratio-three-quarters-of-quarter: 0.1875;
-	--ratio-eighth: 0.125;
+    --ratio-three-quarters-of-three-quarter: 0.875;
+    --ratio-three-quarter: 0.75;
+    --ratio-half: 0.5;
+    --ratio-quarter: 0.25;
+    --ratio-three-quarters-of-quarter: 0.1875;
+    --ratio-eighth: 0.125;
 
-	/* animation */
-	--default-animation-duration: 0.5s;
-	--default-anmiation-delay: var(--default-animation-duration);
-	--default-anmiation-delay-new: calc(var(--default-animation-duration) * 2);
+    /* animation */
+    --default-animation-duration: 0.5s;
+    --default-anmiation-delay: var(--default-animation-duration);
+    --default-anmiation-delay-new: calc(var(--default-animation-duration) * 2);
 
-	/* 기본 스타일링 */
-	font-family:
-		'Pretendard Variable',
-		Pretendard,
-		'Pretendard JP Variable',
-		'Pretendard JP',
-		-apple-system,
-		BlinkMacSystemFont,
-		system-ui,
-		Roboto,
-		'Helvetica Neue',
-		'Segoe UI',
-		'Hiragino Sans',
-		'Apple SD Gothic Neo',
-		Meiryo,
-		'Noto Sans JP',
-		'Noto Sans KR',
-		'Malgun Gothic',
-		Osaka,
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Segoe UI Symbol',
-		sans-serif;
-	font-feature-settings: 'ss05'; /* 스타일리스틱 세트 05 활성화 */
+    /* 기본 스타일링 */
+    font-family: 'Pretendard Variable',
+    Pretendard,
+    'Pretendard JP Variable',
+    'Pretendard JP',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    'Helvetica Neue',
+    'Segoe UI',
+    'Hiragino Sans',
+    'Apple SD Gothic Neo',
+    Meiryo,
+    'Noto Sans JP',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    Osaka,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    sans-serif;
+    font-feature-settings: 'ss05'; /* 스타일리스틱 세트 05 활성화 */
 
-	-ms-text-size-adjust: 100%; /* IE, old Edge */
-	-webkit-text-size-adjust: 100%; /* Chrome, Safari, new Edge */
-	text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; /* IE, old Edge */
+    -webkit-text-size-adjust: 100%; /* Chrome, Safari, new Edge */
+    text-size-adjust: 100%;
 
-	color: var(--color-default-black);
-	background-color: var(--color-primary-sub);
+    color: var(--color-default-black);
+    background-color: var(--color-primary-sub);
 
-	min-inline-size: var(--min-inline-size);
-	overflow: scroll; /* 윈도우에서 의도적으로 스크롤바를 노출시켜 스크롤바 때문에 생기는 레이아웃의 뒤틀림 방지 */
+    min-inline-size: var(--min-inline-size);
+    overflow: scroll; /* 윈도우에서 의도적으로 스크롤바를 노출시켜 스크롤바 때문에 생기는 레이아웃의 뒤틀림 방지 */
 
-	text-wrap: pretty;
+    text-wrap: pretty;
 }
 
 body {
-	margin: unset;
-	min-block-size: 100lvh;
+    margin: unset;
+    min-block-size: 100lvh;
 }
 
 p,
 li {
-	line-height: 1.25em;
+    line-height: 1.25em;
 }
 
 a {
-	color: unset;
+    color: unset;
 
-	&:hover {
-		text-decoration-color: var(--color-primary);
-	}
+    &:hover {
+        text-decoration-color: var(--color-primary);
+    }
 }
 
 img {
-	max-inline-size: 100%;
+    max-inline-size: 100%;
 }
 
 .margin {
-	margin: var(--default-margin);
+    margin: var(--default-margin);
 }
 
 .margin-block {
-	margin-block: var(--default-margin);
+    margin-block: var(--default-margin);
 }
 
 .margin-inline {
-	margin-inline: var(--default-margin);
+    margin-inline: var(--default-margin);
 }
 
 .margin-reset {
-	margin: unset;
+    margin: unset;
 }
 
 .margin-block-reset {
-	margin-block: unset;
+    margin-block: unset;
 }
 
 .margin-inline-reset {
-	margin-inline: unset;
+    margin-inline: unset;
 }
 
 .padding {
-	padding: var(--default-padding);
+    padding: var(--default-padding);
 }
 
 .content {
-	& > :first-child {
-		margin-block-start: 0;
-	}
+    & > :first-child {
+        margin-block-start: 0;
+    }
 
-	& > :last-child {
-		margin-block-end: 0;
-	}
+    & > :last-child {
+        margin-block-end: 0;
+    }
 }
 
 .highlight-background {
-	background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-	a {
-		transition: text-decoration-color var(--default-animation-duration);
-	}
+    a {
+        transition: text-decoration-color var(--default-animation-duration);
+    }
 }
 
 /* 스크롤바 전체 컨테이너 스타일링 */
 ::-webkit-scrollbar {
-	inline-size: var(--scroll-bar-size); /* 스크롤바 너비, 세로 모드시 */
-	block-size: var(--scroll-bar-size); /* 스크롤바 높이, 가로 모드시 */
+    inline-size: var(--scroll-bar-size); /* 스크롤바 너비, 세로 모드시 */
+    block-size: var(--scroll-bar-size); /* 스크롤바 높이, 가로 모드시 */
 }
 
 /* 스크롤바 트랙 (트랙 부분은 스크롤바가 움직이는 배경 부분) */
 ::-webkit-scrollbar-track {
-	margin: var(--default-margin);
+    margin: var(--default-margin);
 }
 
 /* 스크롤바 핸들 (사용자가 잡고 움직이는 부분) */
 ::-webkit-scrollbar-thumb {
-	background-color: var(--color-primary); /* 스크롤바 핸들을 프라이머리 컬러로 설정 */
-	border-radius: var(--scroll-bar-size); /* 스크롤바 모서리를 둥글게 */
+    background-color: var(--color-primary); /* 스크롤바 핸들을 프라이머리 컬러로 설정 */
+    border-radius: var(--scroll-bar-size); /* 스크롤바 모서리를 둥글게 */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: hsl(176, 89%, 47%); /* 좀 더 밝은 프라이머리 컬러로 변경 */
+    background-color: hsl(176, 89%, 47%); /* 좀 더 밝은 프라이머리 컬러로 변경 */
 }
 
 ::-webkit-scrollbar-corner {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 figure {
-	margin-inline: unset;
-	border-radius: var(--inner-border-radius);
-	background-color: var(--color-primary);
-	max-inline-size: 100%;
-	inline-size: fit-content;
+    margin-inline: unset;
+    border-radius: var(--inner-border-radius);
+    background-color: var(--color-primary);
+    max-inline-size: 100%;
+    inline-size: fit-content;
 
-	figcaption {
-		padding-inline: var(--default-padding);
-		padding-block-end: var(--default-border-width);
+    figcaption {
+        padding-inline: var(--default-padding);
+        padding-block-end: var(--default-border-width);
 
-		font-size: 0.75rem;
-		text-align: end;
+        font-size: 0.75rem;
+        text-align: end;
 
-		:first-child {
-			margin-block-start: 0;
-		}
+        :first-child {
+            margin-block-start: 0;
+        }
 
-		:last-child {
-			margin-block-end: 0;
-		}
-	}
+        :last-child {
+            margin-block-end: 0;
+        }
+    }
 
-	pre {
-		margin-block-end: unset;
-	}
+    pre {
+        margin-block-end: unset;
+    }
 
-	&:has(img) {
-		& > img {
-			border: var(--default-border-width) solid var(--color-primary);
-			border-radius: var(--inner-border-radius);
+	& > img, a:has(img) {
+		border: var(--default-border-width) solid var(--color-primary);
+		border-radius: var(--inner-border-radius);
+
+		&:is(img) {
 			box-sizing: border-box;
-
 			background-color: var(--color-default-black);
+		}
+
+		&:is(a:has(img)) {
+			display: block;
+			background-color: var(--color-primary-sub);
 		}
 	}
 }
 
 code {
-	font-family: 'Neo둥근모 Code', monospace;
+    font-family: 'Neo둥근모 Code', monospace;
 }
 
 :not(pre) > code {
-	background-color: var(--color-default-black);
-	border-radius: var(--inner-border-radius);
-	padding: 0.125rem 0.25rem;
-	color: var(--color-default-white);
+    background-color: var(--color-default-black);
+    border-radius: var(--inner-border-radius);
+    padding: 0.125rem 0.25rem;
+    color: var(--color-default-white);
 }
 
 /* shiki custom css */
 pre.shiki {
-	--shiki-foreground: light-dark(#657B83, #a6accd);
-	--shiki-background: light-dark(#FDF6E3, #1b1e28);
-	--shiki-token-constant: light-dark(#D33682, #5DE4c7);
-	--shiki-token-string: light-dark(#2AA198, #5DE4c7);
-	--shiki-token-comment: light-dark(#93A1A1, #767c9dB0);
-	--shiki-token-keyword: light-dark(#859900, #a6accd);
-	--shiki-token-parameter: light-dark(#657B83, #e4f0fb);
-	--shiki-token-function: light-dark(#268BD2, #ADD7FF);
-	--shiki-token-string-expression: light-dark(#DC322F, #5fb3a1);
-	--shiki-token-punctuation: light-dark(#859900, #a6accd);
-	--shiki-token-link: light-dark(#268BD2, #ADD7FF);
+    --shiki-foreground: light-dark(#657B83, #a6accd);
+    --shiki-background: light-dark(#FDF6E3, #1b1e28);
+    --shiki-token-constant: light-dark(#D33682, #5DE4c7);
+    --shiki-token-string: light-dark(#2AA198, #5DE4c7);
+    --shiki-token-comment: light-dark(#93A1A1, #767c9dB0);
+    --shiki-token-keyword: light-dark(#859900, #a6accd);
+    --shiki-token-parameter: light-dark(#657B83, #e4f0fb);
+    --shiki-token-function: light-dark(#268BD2, #ADD7FF);
+    --shiki-token-string-expression: light-dark(#DC322F, #5fb3a1);
+    --shiki-token-punctuation: light-dark(#859900, #a6accd);
+    --shiki-token-link: light-dark(#268BD2, #ADD7FF);
 
-	/* ANSI colors */
-	--shiki-ansi-black: light-dark(#073642, #1b1e28);
-	--shiki-ansi-black-dim: light-dark(#07364280, #1b1e2880);
-	--shiki-ansi-red: light-dark(#dc322f, #d0679d);
-	--shiki-ansi-red-dim: light-dark(#dc322f80, #d0679d80);
-	--shiki-ansi-green: light-dark(#859900, #5DE4c7);
-	--shiki-ansi-green-dim: light-dark(#85990080, #5DE4c780);
-	--shiki-ansi-yellow: light-dark(#b58900, #fffac2);
-	--shiki-ansi-yellow-dim: light-dark(#b5890080, #fffac280);
-	--shiki-ansi-blue: light-dark(#268bd2, #89ddff);
-	--shiki-ansi-blue-dim: light-dark(#268bd280, #89ddff80);
-	--shiki-ansi-magenta: light-dark(#d33682, #f087bd);
-	--shiki-ansi-magenta-dim: light-dark(#d3368280, #f087bd80);
-	--shiki-ansi-cyan: light-dark(#2aa198, #89ddff);
-	--shiki-ansi-cyan-dim: light-dark(#2aa19880, #89ddff80);
-	--shiki-ansi-white: light-dark(#eee8d5, #ffffff);
-	--shiki-ansi-white-dim: light-dark(#eee8d580, #ffffff80);
-	--shiki-ansi-bright-black: light-dark(#002b36, #a6accd);
-	--shiki-ansi-bright-black-dim: light-dark(#002b3680, #a6accd80);
-	--shiki-ansi-bright-red: light-dark(#cb4b16, #d0679d);
-	--shiki-ansi-bright-red-dim: light-dark(#cb4b1680, #d0679d80);
-	--shiki-ansi-bright-green: light-dark(#586e75, #5DE4c7);
-	--shiki-ansi-bright-green-dim: light-dark(#586e7580, #5DE4c780);
-	--shiki-ansi-bright-yellow: light-dark(#657b83, #fffac2);
-	--shiki-ansi-bright-yellow-dim: light-dark(#657b8380, #fffac280);
-	--shiki-ansi-bright-blue: light-dark(#839496, #ADD7FF);
-	--shiki-ansi-bright-blue-dim: light-dark(#83949680, #ADD7FF80);
-	--shiki-ansi-bright-magenta: light-dark(#6c71c4, #f087bd);
-	--shiki-ansi-bright-magenta-dim: light-dark(#6c71c480, #f087bd80);
-	--shiki-ansi-bright-cyan: light-dark(#93a1a1, #ADD7FF);
-	--shiki-ansi-bright-cyan-dim: light-dark(#93a1a180, #ADD7FF80);
-	--shiki-ansi-bright-white: light-dark(#fdf6e3, #ffffff);
-	--shiki-ansi-bright-white-dim: light-dark(#fdf6e380, #ffffff80);
+    /* ANSI colors */
+    --shiki-ansi-black: light-dark(#073642, #1b1e28);
+    --shiki-ansi-black-dim: light-dark(#07364280, #1b1e2880);
+    --shiki-ansi-red: light-dark(#dc322f, #d0679d);
+    --shiki-ansi-red-dim: light-dark(#dc322f80, #d0679d80);
+    --shiki-ansi-green: light-dark(#859900, #5DE4c7);
+    --shiki-ansi-green-dim: light-dark(#85990080, #5DE4c780);
+    --shiki-ansi-yellow: light-dark(#b58900, #fffac2);
+    --shiki-ansi-yellow-dim: light-dark(#b5890080, #fffac280);
+    --shiki-ansi-blue: light-dark(#268bd2, #89ddff);
+    --shiki-ansi-blue-dim: light-dark(#268bd280, #89ddff80);
+    --shiki-ansi-magenta: light-dark(#d33682, #f087bd);
+    --shiki-ansi-magenta-dim: light-dark(#d3368280, #f087bd80);
+    --shiki-ansi-cyan: light-dark(#2aa198, #89ddff);
+    --shiki-ansi-cyan-dim: light-dark(#2aa19880, #89ddff80);
+    --shiki-ansi-white: light-dark(#eee8d5, #ffffff);
+    --shiki-ansi-white-dim: light-dark(#eee8d580, #ffffff80);
+    --shiki-ansi-bright-black: light-dark(#002b36, #a6accd);
+    --shiki-ansi-bright-black-dim: light-dark(#002b3680, #a6accd80);
+    --shiki-ansi-bright-red: light-dark(#cb4b16, #d0679d);
+    --shiki-ansi-bright-red-dim: light-dark(#cb4b1680, #d0679d80);
+    --shiki-ansi-bright-green: light-dark(#586e75, #5DE4c7);
+    --shiki-ansi-bright-green-dim: light-dark(#586e7580, #5DE4c780);
+    --shiki-ansi-bright-yellow: light-dark(#657b83, #fffac2);
+    --shiki-ansi-bright-yellow-dim: light-dark(#657b8380, #fffac280);
+    --shiki-ansi-bright-blue: light-dark(#839496, #ADD7FF);
+    --shiki-ansi-bright-blue-dim: light-dark(#83949680, #ADD7FF80);
+    --shiki-ansi-bright-magenta: light-dark(#6c71c4, #f087bd);
+    --shiki-ansi-bright-magenta-dim: light-dark(#6c71c480, #f087bd80);
+    --shiki-ansi-bright-cyan: light-dark(#93a1a1, #ADD7FF);
+    --shiki-ansi-bright-cyan-dim: light-dark(#93a1a180, #ADD7FF80);
+    --shiki-ansi-bright-white: light-dark(#fdf6e3, #ffffff);
+    --shiki-ansi-bright-white-dim: light-dark(#fdf6e380, #ffffff80);
 
-	&:has(code) {
-		/* reset */
-		margin-block: unset;
+    &:has(code) {
+        /* reset */
+        margin-block: unset;
 
-		border: var(--default-border-width) solid var(--color-primary);
-		border-radius: var(--inner-border-radius);
-		padding: var(--default-padding);
-	}
+        border: var(--default-border-width) solid var(--color-primary);
+        border-radius: var(--inner-border-radius);
+        padding: var(--default-padding);
+    }
 
-	code {
-		counter-reset: line;
+    code {
+        counter-reset: line;
 
-		display: block;
-		overflow-y: scroll;
+        display: block;
+        overflow-y: scroll;
 
-		& > .line {
-			&::before {
-				counter-increment: line;
-				content: counter(line);
+        & > .line {
+            &::before {
+                counter-increment: line;
+                content: counter(line);
 
-				/* Other styling */
-				backdrop-filter: blur(1rem);
-				position: sticky;
-				inset-inline-start: 0;
-				display: inline-block;
-				inline-size: 1rem;
-				padding-inline-end: var(--default-padding);
-				text-align: right;
+                /* Other styling */
+                backdrop-filter: blur(1rem);
+                position: sticky;
+                inset-inline-start: 0;
+                display: inline-block;
+                inline-size: 1rem;
+                padding-inline-end: var(--default-padding);
+                text-align: right;
 
-				/* 코드와 간격 */
-				border-inline-end: var(--default-border-width) solid var(--color-primary);
-				margin-inline-end: var(--default-margin);
-			}
+                /* 코드와 간격 */
+                border-inline-end: var(--default-border-width) solid var(--color-primary);
+                margin-inline-end: var(--default-margin);
+            }
 
-			/* transformerNotationDiff */
-			&.diff {
-				&.remove {
-					background-color: light-dark(hsl(0, 100%, 90%), hsl(0, 100%, 25%));
+            /* transformerNotationDiff */
 
-					&::before {
-						content: counter(line) ' -';
-						inline-size: calc(1rem + var(--default-padding));
-						padding-inline-end: unset;
-					}
-				}
+            &.diff {
+                &.remove {
+                    background-color: light-dark(hsl(0, 100%, 90%), hsl(0, 100%, 25%));
 
-				&.add {
-					background-color: light-dark(hsl(120, 100%, 90%), hsl(120, 100%, 15%));
+                    &::before {
+                        content: counter(line) ' -';
+                        inline-size: calc(1rem + var(--default-padding));
+                        padding-inline-end: unset;
+                    }
+                }
 
-					&::before {
-						content: counter(line) ' +';
-						inline-size: calc(1rem + var(--default-padding));
-						padding-inline-end: unset;
-					}
-				}
-			}
-		}
-	}
+                &.add {
+                    background-color: light-dark(hsl(120, 100%, 90%), hsl(120, 100%, 15%));
 
-	/* transformerNotationFocus */
-	&.has-focused {
-		 &:not(:hover) .line:not(.focused) {
-			filter: blur(.1rem);
-			opacity: .4;
-		}
+                    &::before {
+                        content: counter(line) ' +';
+                        inline-size: calc(1rem + var(--default-padding));
+                        padding-inline-end: unset;
+                    }
+                }
+            }
+        }
+    }
 
-		@media (prefers-reduced-motion: no-preference) {
-			& .line {
-				transition-property: filter, opacity;
-				transition-duration: var(--default-animation-duration);
-			}
-		}
-	}
+    /* transformerNotationFocus */
 
-	&[data-title] {
-		position: relative;
-		padding-block-start: calc(var(--default-padding) * 1.25);
+    &.has-focused {
+        &:not(:hover) .line:not(.focused) {
+            filter: blur(.1rem);
+            opacity: .4;
+        }
 
-		&::before {
-			position: absolute;
-			inset-block-start: 0;
-			transform: translateY(-50%);
+        @media (prefers-reduced-motion: no-preference) {
+            & .line {
+                transition-property: filter, opacity;
+                transition-duration: var(--default-animation-duration);
+            }
+        }
+    }
 
-			content: attr(data-title);
-			display: block;
-			padding: calc(var(--default-padding) / 2);
-			background-color: var(--color-primary);
-			border-radius: var(--inner-border-radius);
+    &[data-title] {
+        position: relative;
+        padding-block-start: calc(var(--default-padding) * 1.25);
 
-			/* typography */
-			color: var(--color-default-black);
-			font-weight: bold;
-		}
-	}
+        &::before {
+            position: absolute;
+            inset-block-start: 0;
+            transform: translateY(-50%);
+
+            content: attr(data-title);
+            display: block;
+            padding: calc(var(--default-padding) / 2);
+            background-color: var(--color-primary);
+            border-radius: var(--inner-border-radius);
+
+            /* typography */
+            color: var(--color-default-black);
+            font-weight: bold;
+        }
+    }
 }
 
 /* https://meta.superuser.com/questions/4788/css-for-the-new-kbd-style */
 kbd {
-	-moz-border-radius: 3px;
-	-moz-box-shadow:
-		0 1px 0 rgba(0, 0, 0, 0.2),
-		0 0 0 2px #fff inset;
-	-webkit-border-radius: 3px;
-	-webkit-box-shadow:
-		0 1px 0 rgba(0, 0, 0, 0.2),
-		0 0 0 2px #fff inset;
-	background-color: #f7f7f7;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	box-shadow:
-		0 1px 0 rgba(0, 0, 0, 0.2),
-		0 0 0 2px #fff inset;
-	color: #333;
-	display: inline-block;
-	font-size: 1rem;
-	line-height: 1.4;
-	margin: 0 0.1em;
-	padding: 0.1em 0.6em;
-	text-shadow: 0 1px 0 #fff;
+    -moz-border-radius: 3px;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
+    -webkit-border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px #fff inset;
+    color: #333;
+    display: inline-block;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    text-shadow: 0 1px 0 #fff;
 }
