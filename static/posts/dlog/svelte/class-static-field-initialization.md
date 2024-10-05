@@ -46,7 +46,7 @@ Category[symbol]();
 ## 정적 초기화 블럭으로 개선
 
 자바에서 `{}` 블럭을 통해 정적 멤버와 인스턴스 멤버를 초기화할 수 있습니다.
-[자바스크립트에서도 클래스 문법에 적용](https://github.com/XIYO/xiyo.github.io/blob/ebd7d90f357ef507654a1a6b08aa4ece8f42d0d1/src/lib/post/Category.js#L5 "정적 초기화 블럭을 사용한 코드")하여 코드를 더욱 간결하게 만들 수 있습니다.
+[자바스크립트에서도 클래스 문법에 적용](https://github.com/XIYO/xiyo.github.io/blob/ebd7d90f357ef507654a1a6b08aa4ece8f42d0d1/src/lib/post/Category.js#L16-L29 "정적 초기화 블럭을 사용한 코드")하여 코드를 더욱 간결하게 만들 수 있습니다.
 
 > [!NOTE]
 > 프로토타입은 즉시 실행 함수 표현식, "IIFE"를 사용하여 정적 초기화 로직을 구현할 수 있습니다.
