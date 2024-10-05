@@ -164,7 +164,12 @@ export default class Category {
 		const [posts, childCategories] = await Promise.all([postsPromise, childCategoriesPromise]);
 
 		posts.sort((a, b) => {
-			return new Date(b.gitLog.at(-1).datetime) < new Date(a.gitLog.at(-1).datetime);
+			const dateA = new Date(a.gitLog.at(-1).datetime);
+			const dateB = new Date(b.gitLog.at(-1).datetime);
+
+			if (dateA > dateB) return -1; // 최신 글이 앞으로
+			if (dateA < dateB) return 1; // 오래된 글이 뒤로
+			return 0; // 날짜가 같을 경우
 		});
 
 		return (this.#serialized = {
