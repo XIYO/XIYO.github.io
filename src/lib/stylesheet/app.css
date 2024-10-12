@@ -386,3 +386,9 @@ kbd {
     padding: 0.1em 0.6em;
     text-shadow: 0 1px 0 #fff;
 }
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ddd;
+    color: gray;
+}
