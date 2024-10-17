@@ -83,12 +83,14 @@
 	{#if $page.data.og.section}
 		<meta property="article:section" content={$page.data.og.section} />
 	{/if}
-	{#if $page.data.og.tags}
-		<meta property="article:tag" content={$page.data.og.tags} />
-	{/if}
-	{#if $page.data.og.keywords}
-		<meta name="keywords" content={$page.data.og.keywords} />
-	{/if}
+    {#if $page.data.og.tags}
+        {#each $page.data.og.tags as tag}
+            <meta property="article:tag" content={tag}/>
+        {/each}
+    {/if}
+    <!--{#if $page.data.og.keywords}-->
+    <!--	<meta name="keywords" content={$page.data.og.keywords} />-->
+    <!--{/if}-->
 </svelte:head>
 
 <ParaglideJS {i18n}>
