@@ -126,7 +126,7 @@
 
 	/* 소형 모니터 미만 */
 	@media (width < 1024px) {
-		:root:has(#border-outer-nav:not(:popover-open)) :global(#border-outer-nav) {
+		:root:has(:global(#border-outer-nav:not(:popover-open))) :global(#border-outer-nav) {
 			/* 화면밖으로 나갈때 사진의 영역 + 마진 까지 계산 */
 			transform: translateX(calc(100% + var(--default-margin)));
 		}
