@@ -176,7 +176,7 @@ figure {
         padding-inline: var(--default-padding);
         padding-block-end: var(--default-border-width);
 
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         text-align: end;
 
         :first-child {
