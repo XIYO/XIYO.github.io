@@ -69,7 +69,7 @@ tags:
 
 ### 코딩 테스트 스터디
 
-![코딩 스터디 모집 공고](static/resources/a-day-in-the-life-of-a-student-20241104162943113.png)
+![코딩 스터디 모집 공고](/static/resources/a-day-in-the-life-of-a-student-20241104162943113.png)
 
 > 나름 센세이션했던 코딩 테스트 멤버 모집...
 
