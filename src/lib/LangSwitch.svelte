@@ -1,7 +1,7 @@
 <script>
 	import { availableLanguageTags } from '$lib/paraglide/runtime.js';
 	import { i18n } from '$lib/i18n.js';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 </script>
 
 {#snippet switcher({href, lang})}
@@ -14,7 +14,7 @@
 
 <ul>
 	{#each availableLanguageTags as lang}
-		{@render switcher({href: i18n.route($page.url.pathname), lang})}
+		{@render switcher({href: i18n.route(page.url.pathname), lang})}
 	{/each}
 </ul>
 
