@@ -1,8 +1,10 @@
 <script>
-	const { title } = $props();
+	const { children } = $props();
 </script>
 
-<h2 class="highlight-background">{title}</h2>
+<h2 class="highlight-background">
+	{@render children()}
+</h2>
 
 <style>
 	h2 {

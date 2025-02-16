@@ -8,7 +8,9 @@
 
 <div id="posts-post-container">
 	<Card id="category" viewTransitionName="category" negative>
-		<CardHeader title="categories" />
+		<CardHeader>
+			categories
+		</CardHeader>
 
 		{#if category.childCategories.length}
 			<ul class="padding">
@@ -26,7 +28,9 @@
 	</Card>
 
 	<Card id="article" viewTransitionName="posts" negative>
-		<CardHeader title="posts" />
+		<CardHeader>
+			posts
+		</CardHeader>
 
 		<ul class="padding">
 			{#each category.allPosts as post}
