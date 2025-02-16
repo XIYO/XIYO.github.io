@@ -14,8 +14,6 @@ AC88U 라우터에 Nginx를 설치하고 SSL 인증서를 설정해두었지만,
 
 이처럼 하위 도메인이 많을 경우, 와일드카드(`*.xiyo.dev`)를 사용하여 한 번에 인증서를 발급하는 것이 효율적입니다.
 
----
-
 ## 사전 지식
 
 와일드카드 도메인은 **HTTP-01 방식이 아닌 DNS-01 방식**으로 인증해야 합니다.
@@ -26,7 +24,7 @@ AC88U 라우터에 Nginx를 설치하고 SSL 인증서를 설정해두었지만,
 
 ### Cloudflare API를 사용한 DNS 인증
 
-깃허브 [ACME 리포지토리의 ](https://github.com/acmesh-official/acme.sh/blob/master/dnsapi/dns_cf.sh)[`dns_cf`](https://github.com/acmesh-official/acme.sh/blob/master/dnsapi/dns_cf.sh) 스크립트를 보면, DNS-01 방식을 사용할 때 필요한 환경 변수를 확인할 수 있습니다.
+깃허브 [ACME 리포지토리](https://github.com/acmesh-official/acme.sh)의 [`dns_cf`](https://github.com/acmesh-official/acme.sh/blob/master/dnsapi/dns_cf.sh) 스크립트를 보면, DNS-01 방식을 사용할 때 필요한 환경 변수를 확인할 수 있습니다.
 
 ```sh
 #!/usr/bin/env sh
