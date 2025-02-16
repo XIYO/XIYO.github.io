@@ -1,10 +1,10 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
 	import jjakak from '$lib/assets/jjakak.jpeg?enhanced';
 	import * as m from '$lib/paraglide/messages.js';
 </script>
 
-<Border viewTransitionName="post" negative id="article">
+<Card viewTransitionName="post" negative id="article">
 	<div class="gloves padding">
 		<a class="glove content" href="https://jjakak.xiyo.dev" target="_blank">
 			<enhanced:img src={jjakak} alt={m.jjakakImgAlt()} />
@@ -12,7 +12,7 @@
 			<p>{m.jjakakDescription()}</p>
 		</a>
 	</div>
-</Border>
+</Card>
 
 <style>
 	.gloves {

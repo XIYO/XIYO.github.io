@@ -1,15 +1,15 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
 
 	const { title } = $props();
 </script>
 
-<Border id="header" viewTransitionName="header" tag="header">
+<Card id="header" viewTransitionName="header" tag="header">
 	<h1>{title}</h1>
 
 	<NavButton popovertargetaction="toggle" />
-</Border>
+</Card>
 
 <style>
 	:global(#border-outer-header) {

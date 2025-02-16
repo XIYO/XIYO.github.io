@@ -1,5 +1,5 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
 	import { languageTag } from '$lib/paraglide/runtime.js';
 
 	const { post } = $props();
@@ -16,7 +16,7 @@
 	const lastCommitDateString = dateTimeFormat.format(lastCommitDate);
 </script>
 
-<Border viewTransitionName="post" negative>
+<Card viewTransitionName="post" negative>
 	<div id="post-content" class="content padding">
 		{@html post.value}
 	</div>
@@ -29,7 +29,7 @@
 			{/if}
 		</div>
 	</div>
-</Border>
+</Card>
 
 <style>
 	:global(#border-outer-post) {

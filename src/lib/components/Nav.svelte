@@ -1,12 +1,12 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
 	import NavButton from '$lib/components/NavButton.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 	import LangSwitch from '$lib/LangSwitch.svelte';
 	import NavMenu from '$lib/NavMenu.svelte';
 </script>
 
-<Border viewTransitionName="nav" tag="nav" id="nav" popover="manual">
+<Card viewTransitionName="nav" tag="nav" id="nav" popover="manual">
 	<div id="nav-header">
 		<span class="padding">Menu</span>
 		<NavButton popovertargetaction="hide" />
@@ -27,7 +27,7 @@
 			</svg>
 		</a>
 	</div>
-</Border>
+</Card>
 
 <style>
 	/* 내비게이션은 보이는 상태를 스타일링 하고, (input:checked) 움직였을 때의 상태는 추가 스타일링(아래)으로 한다 */

@@ -1,10 +1,10 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 	import terminalBrowsing from '$lib/assets/terminal_browsing.png?enhanced';
 </script>
 
-<Border viewTransitionName="post" negative>
+<Card viewTransitionName="post" negative>
 	<div class="padding content">
 		<p>{@html m.welcome()}</p>
 
@@ -15,4 +15,4 @@
 			</figcaption>
 		</figure>
 	</div>
-</Border>
+</Card>

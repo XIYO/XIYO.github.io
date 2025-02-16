@@ -1,14 +1,14 @@
 <script>
-	import Border from '$lib/ui/Border.svelte';
-	import BorderHeader from '$lib/ui/BorderHeader.svelte';
+	import Card from '$lib/ui/card/Card.svelte';
+	import CardHeader from '$lib/ui/card/CardHeader.svelte';
 	import * as m from '$lib/paraglide/messages.js';
 
 	const { category } = $props();
 </script>
 
 <div id="posts-post-container">
-	<Border id="category" viewTransitionName="category" negative>
-		<BorderHeader title="categories" />
+	<Card id="category" viewTransitionName="category" negative>
+		<CardHeader title="categories" />
 
 		{#if category.childCategories.length}
 			<ul class="padding">
@@ -23,10 +23,10 @@
 		{:else}
 			<p class="padding margin-block-reset">{m.subCategoryEmpty()}</p>
 		{/if}
-	</Border>
+	</Card>
 
-	<Border id="article" viewTransitionName="posts" negative>
-		<BorderHeader title="posts" />
+	<Card id="article" viewTransitionName="posts" negative>
+		<CardHeader title="posts" />
 
 		<ul class="padding">
 			{#each category.allPosts as post}
@@ -37,7 +37,7 @@
 				</li>
 			{/each}
 		</ul>
-	</Border>
+	</Card>
 </div>
 
 <style>
